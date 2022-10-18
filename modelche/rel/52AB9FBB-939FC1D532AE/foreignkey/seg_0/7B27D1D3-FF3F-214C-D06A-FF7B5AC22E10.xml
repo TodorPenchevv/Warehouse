@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7B27D1D3-FF3F-214C-D06A-FF7B5AC22E10" containerWithKeyObject="003179BB-962A-ABC3-9C54-2A78BF3361B7" localFKIndex="6BDE2DA8-EF31-DA95-2273-7F484A310E2D" name="Invoice_Supplier_Invoices_FK">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 13:25:51 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<referredTableLongName>Invoices</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C2D869B0-62D9-AD32-3457-7135B5E29448</referredTableID>
+<keyObject>7486CD91-AA6C-A3CA-D2B4-EF11D171CF98</keyObject>
+<referredKeyID>7486CD91-AA6C-A3CA-D2B4-EF11D171CF98</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorColumn>74943D1A-2197-77C2-A42D-D5CD70C3C70B</discriminatorColumn>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

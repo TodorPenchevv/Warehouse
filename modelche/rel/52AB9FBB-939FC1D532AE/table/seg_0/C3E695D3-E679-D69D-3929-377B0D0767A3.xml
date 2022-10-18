@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C3E695D3-E679-D69D-3929-377B0D0767A3" name="Clients">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 12:57:46 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="F3B06D8D-43A5-DAAB-3CAF-A19F04091CFB">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 12:58:19 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="partner_id" id="55047FAD-C262-E484-82EB-7A08C4278C32">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 12:58:19 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5FA93A48-FA93-209C-B910-68189CED6111" referredColumn="4A7D47A6-3095-EB58-FD3A-85CD33277B25"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="38818074-7BEF-AEDF-E5B2-59E4ED11E972" name="Clients_PK">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 12:58:19 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3B06D8D-43A5-DAAB-3CAF-A19F04091CFB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D046C6F1-C588-0596-3A34-19EB6B37FBB8" name="Clients_Partners_FK">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 13:23:27 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="55047FAD-C262-E484-82EB-7A08C4278C32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5FA93A48-FA93-209C-B910-68189CED6111" containerWithKeyObject="C3E695D3-E679-D69D-3929-377B0D0767A3" localFKIndex="D046C6F1-C588-0596-3A34-19EB6B37FBB8" name="Clients_Partners_FK">
+<createdBy>Glvatarq</createdBy>
+<createdTime>2022-10-18 13:23:27 UTC</createdTime>
+<ownerDesignName>modelche</ownerDesignName>
+<referredTableLongName>Partners</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>80CFA26C-1EA3-6C5C-958B-69E0CFA7F609</referredTableID>
+<keyObject>9A8E21EF-9FC3-832F-4291-28215A6A40B7</keyObject>
+<referredKeyID>9A8E21EF-9FC3-832F-4291-28215A6A40B7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorColumn>4A7D47A6-3095-EB58-FD3A-85CD33277B25</discriminatorColumn>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
