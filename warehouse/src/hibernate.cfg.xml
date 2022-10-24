@@ -13,6 +13,7 @@
 
     <session-factory>
 
+        <property name="hibernate.id.new_generator_mappings">false</property>
         <!-- Database connection settings -->
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
@@ -21,6 +22,7 @@
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
+
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
@@ -34,8 +36,10 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
+
         <!-- Names the annotated entity class -->
-        <mapping class="ORM.UserDetails"/>
+        <mapping class="ORM.Roles"/>
+        <mapping class="ORM.Users"/>
 
     </session-factory>
 
