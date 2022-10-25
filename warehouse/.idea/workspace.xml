@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Roles.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ORM/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/UserDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Roles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/UserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

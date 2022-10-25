@@ -34,12 +34,20 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
 
         <!-- Names the annotated entity class -->
-        <mapping class="ORM.Roles"/>
-        <mapping class="ORM.Users"/>
+        <!--
+        <<mapping class="ORM.Client"/>
+        <mapping class="ORM.Supplier"/>-->
+        <mapping class="ORM.Role"/>
+        <mapping class="ORM.User"/>
+        <mapping class="ORM.Partner"/>
+        <mapping class="ORM.Good"/>
+        <mapping class="ORM.Register"/>
+        <mapping class="ORM.Transaction"/>
+        <mapping class="ORM.Invoice"/>
 
     </session-factory>
 
