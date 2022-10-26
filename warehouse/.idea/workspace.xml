@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Good.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Supplier.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,6 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

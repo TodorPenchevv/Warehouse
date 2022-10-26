@@ -38,9 +38,6 @@
 
 
         <!-- Names the annotated entity class -->
-        <!--
-        <<mapping class="ORM.Client"/>
-        <mapping class="ORM.Supplier"/>-->
         <mapping class="ORM.Role"/>
         <mapping class="ORM.User"/>
         <mapping class="ORM.Partner"/>
@@ -48,6 +45,7 @@
         <mapping class="ORM.Register"/>
         <mapping class="ORM.Transaction"/>
         <mapping class="ORM.Invoice"/>
+        <mapping class="ORM.Invoice_Good"/>
 
     </session-factory>
 

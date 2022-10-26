@@ -1,6 +1,8 @@
 package ORM;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "GOODS")
@@ -12,6 +14,10 @@ public class Good {
     private String good;
     private int quantity;
     private double price;
+
+    @OneToMany
+    @JoinColumn(name = "good_id")
+    private List<Invoice_Good> invoice_goods = new ArrayList<Invoice_Good>();
 
     public int getId() {
         return id;
@@ -43,6 +49,14 @@ public class Good {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public List<Invoice_Good> getInvoice_goods() {
+        return invoice_goods;
+    }
+
+    public void setInvoice_goods(List<Invoice_Good> invoice_goods) {
+        this.invoice_goods = invoice_goods;
     }
 
     public Good(String good, int quantity, double price) {
