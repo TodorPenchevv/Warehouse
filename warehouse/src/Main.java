@@ -1,16 +1,13 @@
-import ORM.*;
+import BUSINESS.create.InsertManager;
+import BUSINESS.create.TABLES;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-
 public class Main {
     public static void main(String[] args) {
-        User user1 = new User("Momo","Momo","123");
+        /*User user1 = new User("Momo","Momo","123");
         User user2 = new User("Momo1","Momo1","124");
         User user3 = new User("Momo2","Momo2","125");
         User user4 = new User("Momo3","Momo3","126");
@@ -71,9 +68,7 @@ public class Main {
         good1.getInvoice_goods().add(invoice_good5);
         good2.getInvoice_goods().add(invoice_good6);
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
+
         session.save(user1);
         session.save(user2);
         session.save(user3);
@@ -100,9 +95,15 @@ public class Main {
         session.save(invoice_good3);
         session.save(invoice_good4);
         session.save(invoice_good5);
-        session.save(invoice_good6);
+        session.save(invoice_good6);*/
 
-        session.getTransaction().commit();
-        
+        //Creating base session for all operations
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        //Creating a new role "OPERATORS", then creating a new USER with said role.
+        new InsertManager().insert(session, TABLES.ROLE);
+        new InsertManager().insert(session, TABLES.USER);
+        session.close();
     }
 }
