@@ -64,4 +64,7 @@ public class Partner {
         this.phone = phone;
         this.email = email;
     }
+
+    public Partner() {
+    }
 }

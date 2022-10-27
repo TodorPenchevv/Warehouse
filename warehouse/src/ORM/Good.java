@@ -64,4 +64,7 @@ public class Good {
         this.quantity = quantity;
         this.price = price;
     }
+
+    public Good() {
+    }
 }

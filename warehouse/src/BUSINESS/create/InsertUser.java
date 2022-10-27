@@ -15,11 +15,11 @@ public class InsertUser implements Insert {
         //to create the FK column in the new row we are currently creating with said "roleID" PK
         session.beginTransaction();
 
-        //Role role = session.get(Role.class, roleID);
-        //role.getUsers().add(user);
+        Role role = session.get(Role.class, roleID);
+        role.getUsers().add(user);
 
         //Updating row "role" and saving the new row "user"
-        //session.update(role);
+        session.update(role);
         session.save(user);
         session.getTransaction().commit();
     }

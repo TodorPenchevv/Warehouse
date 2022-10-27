@@ -45,4 +45,7 @@ public class Transaction {
     public Transaction(Transactions transaction) {
         this.transaction = transaction;
     }
+
+    public Transaction() {
+    }
 }

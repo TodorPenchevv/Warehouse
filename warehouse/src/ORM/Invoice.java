@@ -47,4 +47,7 @@ public class Invoice {
     public Invoice(Calendar calendar) {
         this.calendar = calendar;
     }
+
+    public Invoice() {
+    }
 }

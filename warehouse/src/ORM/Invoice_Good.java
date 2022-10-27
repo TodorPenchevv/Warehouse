@@ -34,4 +34,9 @@ public class Invoice_Good {
         this.quantity = quantity;
         this.price = price;
     }
+
+    public Invoice_Good() {
+    }
+
+
 }

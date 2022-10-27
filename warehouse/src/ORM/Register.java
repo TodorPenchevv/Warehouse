@@ -31,4 +31,7 @@ public class Register {
         this.id = id;
         this.balance = balance;
     }
+
+    public Register() {
+    }
 }

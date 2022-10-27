@@ -45,4 +45,7 @@ public class Role {
     public Role(Roles role) {
         this.role = role;
     }
+
+    public Role() {
+    }
 }
