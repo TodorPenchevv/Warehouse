@@ -102,8 +102,8 @@ public class Main {
         Session session = sessionFactory.openSession();
 
         //Creating a new role "OPERATORS", then creating a new USER with said role.
-        new InsertManager().insert(session, TABLES.ROLE);
-        new InsertManager().insert(session, TABLES.USER);
+        InsertManager.insert(session, TABLES.ROLE);
+        InsertManager.insert(session, TABLES.USER);
         session.close();
     }
 }

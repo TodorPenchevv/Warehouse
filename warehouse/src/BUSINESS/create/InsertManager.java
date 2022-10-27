@@ -6,9 +6,9 @@ import org.hibernate.Session;
 
 //Menu to choose what data to insert
 //To avoid creating sessions every time an object is inserted, one main session is created in main
-//and is then passed to all methods and classes who need it to function
-public class InsertManager {
-    public void insert(Session session, TABLES table){ //GUI INSERT(TABLES table)
+//and is then passed to all methods and classes who need it to funciton.
+public abstract class InsertManager {
+    public static void insert(Session session, TABLES table){ //GUI INSERT(TABLES table)
         switch (table){
             case ROLE:
                 new RoleGenerator().generate(session);

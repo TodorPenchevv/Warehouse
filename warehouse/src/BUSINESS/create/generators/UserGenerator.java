@@ -24,7 +24,7 @@ public class UserGenerator {
 
         //Downloading Role object with the given PK, adding the new User to the role's ArrayList in order to create the FK
         //column into the new user row with the value of the role's PK
-        Role role = (Role) new DownloadManager().download(session, TABLES.ROLE, roleID);
+        Role role = (Role) DownloadManager.download(session, TABLES.ROLE, roleID);
         role.getUsers().add(user);
 
         //Updating row "role" and saving the new row "user"
