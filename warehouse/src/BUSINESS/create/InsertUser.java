@@ -9,18 +9,18 @@ public class InsertUser implements Insert {
 
         //Creating the user object with the data
         //Some sort of data validation before this step...
-        User user = new User(name, username, password);
+        User newUser = new User(name, username, password);
 
         //Transaction begins now, because we need to update "ROLES" object with PK "roleID" in order
         //to create the FK column in the new row we are currently creating with said "roleID" PK
         session.beginTransaction();
 
         Role role = session.get(Role.class, roleID);
-        role.getUsers().add(user);
+        role.getUsers().add(newUser);
 
         //Updating row "role" and saving the new row "user"
         session.update(role);
-        session.save(user);
+        session.save(name);
         session.getTransaction().commit();
     }
 }
