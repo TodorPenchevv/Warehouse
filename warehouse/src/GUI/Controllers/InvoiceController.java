@@ -15,11 +15,12 @@ public class InvoiceController {
     Calendar calendar;
     int userID;
     int partnerID;
+    int transactionID;
     //nqkak si da se podade tuka informaciqta za vsqka stoka v teq obekti "TempGood" ili po nqkakuv drug nachin
     List<TempGood> goods = new ArrayList<>();
 
 
     public void buttonClicked() {
-        InsertInvoice.create(calendar, goods, userID, partnerID);
+        InsertInvoice.create(calendar, goods, userID, partnerID, transactionID);
     }
 }
