@@ -5,7 +5,8 @@ import ORM.User;
 
 public class InsertUser implements Insert {
     public static void create(String name, String username, String password, int roleID) {
-        System.out.println("In insert method...");
+        //Data validation...
+        //Password more than 8 symbols, has numbers, has capital letter...
 
         //Creating the user object with the data
         //Some sort of data validation before this step...

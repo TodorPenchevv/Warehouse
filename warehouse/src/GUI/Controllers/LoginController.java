@@ -11,7 +11,11 @@ public class LoginController {
     public Button button;
 
     public void loginButtonClicked() {
-        System.out.println("In controller...");
-        new InsertUser().create("Ivan", username.getText(), password.getText(), 1);
+        //FindUser by username
+        //Check if password match
+        //if match
+            //Set CurrentUser
+        //else
+            //set red message for invalid authentication info
     }
 }
