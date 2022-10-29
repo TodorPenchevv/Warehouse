@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="" />
+    <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoiceGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoiceGood.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUSINESS/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoiceGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoiceGood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,5 +88,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

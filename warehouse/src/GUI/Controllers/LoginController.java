@@ -1,7 +1,10 @@
 package GUI.Controllers;
 
 import BUSINESS.CurrentUser;
+import BUSINESS.create.InsertRole;
+import BUSINESS.create.InsertUser;
 import BUSINESS.repository.UserRepository;
+import ORM.Roles;
 import ORM.User;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,13 +13,15 @@ import javafx.scene.control.TextField;
 
 import java.util.List;
 
-public class LoginController {
+public class  LoginController {
     public TextField username;
     public PasswordField password;
     public Button button;
     public Label errorMsg;
 
     public void loginButtonClicked() {
+
+
         //Find user by username
         List<User> users = new UserRepository().findByUsername(username.getText());
 

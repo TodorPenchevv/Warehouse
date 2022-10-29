@@ -7,9 +7,7 @@ import ORM.Invoice_Good;
 import org.hibernate.Session;
 
 public class InsertInvoiceGood implements Insert{
-    public static void create(int quantity, double price, int invoiceID, int goodID) {
-        Session session = GetSession.getSession();
-
+    public static void create(int quantity, double price, int invoiceID, int goodID, Session session) {
         Invoice_Good newInvoiceGood = new Invoice_Good(quantity, price);
 
         session.beginTransaction();

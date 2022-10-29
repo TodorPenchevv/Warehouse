@@ -22,10 +22,12 @@ public class InsertUser implements Insert {
 
         Role role = session.get(Role.class, roleID);
         role.getUsers().add(newUser);
+        newUser.setRole(role);
 
         //Updating row "role" and saving the new row "user"
+        session.save(newUser);
         session.update(role);
-        session.save(name);
+
         session.getTransaction().commit();
         session.close();
     }

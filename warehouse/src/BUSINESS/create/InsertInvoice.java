@@ -27,8 +27,10 @@ public class InsertInvoice implements Insert{
         session.save(newInvoice);
         session.getTransaction().commit();
 
+
+
         for (TempGood good : goods){
-            InsertInvoiceGood.create(good.getQuantity(), good.getPrice(), newInvoice.getId(), good.getId());
+            InsertInvoiceGood.create(good.getQuantity(), good.getPrice(), newInvoice.getId(), good.getId(), session);
         }
 
         //Close session after all goods are added

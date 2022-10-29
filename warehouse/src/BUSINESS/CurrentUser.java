@@ -6,7 +6,7 @@ public class CurrentUser {
     private static int roleId;
     private static boolean loggedIn = false;
 
-    //Singleton because only we can only have one user at the same time
+    //Singleton because we can only have one user at the same time
     public static CurrentUser getInstance()
     {
         return instance;
