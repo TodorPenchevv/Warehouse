@@ -15,6 +15,10 @@ public class User {
     private String username;
     private String password;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
+
     @OneToMany
     @JoinColumn(name = "user_id")
     private List<Invoice> invoices = new ArrayList<Invoice>();
@@ -49,6 +53,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public List<Invoice> getInvoices() {

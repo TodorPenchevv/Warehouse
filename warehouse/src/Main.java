@@ -8,6 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        //JavaFX Setup
         Parent root = FXMLLoader.load(getClass().getResource("GUI/views/login.fxml"));
         primaryStage.setTitle("Складова програма");
         primaryStage.setScene(new Scene(root, 900, 700));

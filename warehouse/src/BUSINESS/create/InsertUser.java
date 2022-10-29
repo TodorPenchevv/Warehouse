@@ -1,10 +1,14 @@
 package BUSINESS.create;
 
+import BUSINESS.GetSession;
 import ORM.Role;
 import ORM.User;
+import org.hibernate.Session;
 
 public class InsertUser implements Insert {
     public static void create(String name, String username, String password, int roleID) {
+        Session session = GetSession.getSession();
+
         //Data validation...
         //Password more than 8 symbols, has numbers, has capital letter...
 
@@ -23,5 +27,6 @@ public class InsertUser implements Insert {
         session.update(role);
         session.save(name);
         session.getTransaction().commit();
+        session.close();
     }
 }

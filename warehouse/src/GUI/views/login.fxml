@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -15,6 +16,11 @@
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
+      <Label fx:id="errorMsg" layoutX="287.0" layoutY="289.0" prefHeight="26.0" prefWidth="300.0" text="Грешно потребителско име или парола" textFill="RED" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
       <VBox layoutX="287.0" layoutY="330.0" prefWidth="300.0" spacing="20.0">
          <children>
             <TextField fx:id="username" prefHeight="25.0" prefWidth="326.0" promptText="Потребител">
@@ -22,12 +28,12 @@
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField fx:id="password" prefHeight="25.0" prefWidth="326.0" promptText="Парола">
+            <PasswordField fx:id="password" prefHeight="25.0" prefWidth="300.0" promptText="Парола">
                <font>
                   <Font size="16.0" />
                </font>
-            </TextField>
-            <Button fx:id="button" mnemonicParsing="false" prefHeight="35.0" prefWidth="326.0" text="Влез" onAction="#loginButtonClicked">
+            </PasswordField>
+            <Button fx:id="button" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="35.0" prefWidth="326.0" text="Влез">
                <font>
                   <Font size="16.0" />
                </font>

@@ -1,12 +1,15 @@
 package BUSINESS.create;
 
+import BUSINESS.GetSession;
 import ORM.*;
+import org.hibernate.Session;
 
 import java.util.Calendar;
 import java.util.List;
 
 public class InsertInvoice implements Insert{
     public static void create(Calendar calendar, List<TempGood> goods, int userID, int partnerID, int transactionID){
+        Session session = GetSession.getSession();
         Invoice newInvoice = new Invoice(calendar);
 
         session.beginTransaction();
@@ -27,5 +30,8 @@ public class InsertInvoice implements Insert{
         for (TempGood good : goods){
             InsertInvoiceGood.create(good.getQuantity(), good.getPrice(), newInvoice.getId(), good.getId());
         }
+
+        //Close session after all goods are added
+        session.close();
     }
 }

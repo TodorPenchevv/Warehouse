@@ -1,11 +1,14 @@
 package BUSINESS.create;
 
+import BUSINESS.GetSession;
 import ORM.Good;
 import ORM.Invoice;
 import ORM.Invoice_Good;
+import org.hibernate.Session;
 
 public class InsertInvoiceGood implements Insert{
     public static void create(int quantity, double price, int invoiceID, int goodID) {
+        Session session = GetSession.getSession();
 
         Invoice_Good newInvoiceGood = new Invoice_Good(quantity, price);
 

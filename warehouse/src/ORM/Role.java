@@ -14,8 +14,7 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private Roles role;
 
-    @OneToMany
-    @JoinColumn(name = "role_id")
+    @OneToMany(mappedBy = "role")
     private List<User> users = new ArrayList<User>();
 
     public int getId() {
