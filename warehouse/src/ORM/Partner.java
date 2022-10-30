@@ -15,8 +15,7 @@ public class Partner {
     private String phone;
     private String email;
 
-    @OneToMany
-    @JoinColumn(name = "partner_id")
+    @OneToMany(mappedBy = "partner")
     private List<Invoice> invoices = new ArrayList<Invoice>();
 
     public int getId() {

@@ -14,8 +14,7 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     private Transactions transaction;
 
-    @OneToMany
-    @JoinColumn(name = "transaction_id")
+    @OneToMany(mappedBy = "transaction")
     private List<Invoice> invoices = new ArrayList<Invoice>();
 
     public int getId() {

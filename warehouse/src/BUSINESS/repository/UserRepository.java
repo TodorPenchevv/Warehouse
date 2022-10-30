@@ -2,6 +2,7 @@ package BUSINESS.repository;
 
 import BUSINESS.GetSession;
 import ORM.User;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 
 import javax.persistence.TypedQuery;

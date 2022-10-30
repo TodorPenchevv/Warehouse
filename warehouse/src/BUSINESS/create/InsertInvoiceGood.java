@@ -1,9 +1,7 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
-import ORM.Good;
-import ORM.Invoice;
-import ORM.Invoice_Good;
+import ORM.*;
 import org.hibernate.Session;
 
 public class InsertInvoiceGood implements Insert{
@@ -16,9 +14,25 @@ public class InsertInvoiceGood implements Insert{
         invoice.getInvoice_goods().add(newInvoiceGood);
         Good good = session.get(Good.class, goodID);
         good.getInvoice_goods().add(newInvoiceGood);
+        Register register = session.get(Register.class, 1);
+
+        double newBalance;
+        int newQuantity;
+        if (invoice.getTransaction().getTransaction() == Transactions.PURCHASE){
+            newBalance = register.getBalance() - quantity*price;
+            newQuantity = good.getQuantity() + quantity;
+        }
+        else{
+            newBalance = register.getBalance() + quantity*price;
+            newQuantity = good.getQuantity() - quantity;
+        }
+
+        register.setBalance(newBalance);
+        good.setQuantity(newQuantity);
 
         session.update(invoice);
         session.update(good);
+        session.update(register);
         session.save(newInvoiceGood);
         session.getTransaction().commit();
     }

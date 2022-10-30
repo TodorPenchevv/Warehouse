@@ -16,9 +16,20 @@ public class Invoice {
     @Temporal(TemporalType.DATE)
     private Calendar calendar;
 
-    @OneToMany
-    @JoinColumn(name = "invoice_id")
+    @OneToMany(mappedBy = "invoice")
     private List<Invoice_Good> invoice_goods = new ArrayList<Invoice_Good>();
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "partner_id", nullable = false)
+    private Partner partner;
+
+    @ManyToOne
+    @JoinColumn(name = "transaction_id", nullable = false)
+    private Transaction transaction;
 
     public int getId() {
         return id;
@@ -42,6 +53,30 @@ public class Invoice {
 
     public void setInvoice_goods(List<Invoice_Good> invoice_goods) {
         this.invoice_goods = invoice_goods;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Partner getPartner() {
+        return partner;
+    }
+
+    public void setPartner(Partner partner) {
+        this.partner = partner;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 
     public Invoice(Calendar calendar) {

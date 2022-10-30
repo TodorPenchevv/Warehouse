@@ -21,8 +21,8 @@ public class InsertUser implements Insert {
         session.beginTransaction();
 
         Role role = session.get(Role.class, roleID);
-        role.getUsers().add(newUser);
         newUser.setRole(role);
+        role.getUsers().add(newUser);
 
         //Updating row "role" and saving the new row "user"
         session.save(newUser);

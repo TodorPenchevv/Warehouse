@@ -14,6 +14,22 @@ public class Invoice_Good {
     @Column(name = "good_price")
     private double price;
 
+    @ManyToOne
+    @JoinColumn(name = "invoice_id", nullable = false)
+    private Invoice invoice;
+
+    @ManyToOne
+    @JoinColumn(name = "good_id", nullable = false)
+    private Good good;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getQuantity() {
         return quantity;
     }
@@ -28,6 +44,22 @@ public class Invoice_Good {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    public Good getGood() {
+        return good;
+    }
+
+    public void setGood(Good good) {
+        this.good = good;
     }
 
     public Invoice_Good(int quantity, double price) {

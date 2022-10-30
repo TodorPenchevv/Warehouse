@@ -15,8 +15,7 @@ public class Good {
     private int quantity;
     private double price;
 
-    @OneToMany
-    @JoinColumn(name = "good_id")
+    @OneToMany(mappedBy = "good")
     private List<Invoice_Good> invoice_goods = new ArrayList<Invoice_Good>();
 
     public int getId() {
