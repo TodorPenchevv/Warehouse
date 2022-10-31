@@ -50,15 +50,15 @@ public class ViewManager {
             case "Списък с фактури":
                 this.load(pane, "views/listInvoices.fxml");
                 break;
-            case "Разходи":
+            case "Разходи, Приходи, Печалби":
                 this.load(pane, "views/expenses.fxml");
                 break;
-            case "Приходи":
+            /*case "Приходи":
                 this.load(pane, "views/income.fxml");
                 break;
             case "Печалби":
                 this.load(pane, "views/profit.fxml");
-                break;
+                break;*/
             case "Движение на наличността":
                 this.load(pane, "views/movement.fxml");
                 break;

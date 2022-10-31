@@ -34,14 +34,13 @@ public class Layout implements Initializable {
         TreeItem<String> goods = Branch.create("Стоки", rootItem);
         Branch.create("Нова стока", goods);
         Branch.create("Наличности", goods);
-        Branch.create("Наличности", goods);
 
         TreeItem<String> invoice = Branch.create("Фактури", rootItem);
         Branch.create("Нова фактура", invoice);
         TreeItem<String> invoicesList = Branch.create("Списък с фактури", invoice);
-        Branch.create("Разходи", invoice);
-        Branch.create("Приходи", invoice);
-        Branch.create("Печалби", invoice);
+        Branch.create("Разходи, Приходи, Печалби", invoice);
+        //Branch.create("Приходи", invoice);
+        //Branch.create("Печалби", invoice);
 
         TreeItem<String> register = Branch.create("Каса", rootItem);
         Branch.create("Движение на наличността", invoice);
@@ -54,6 +53,6 @@ public class Layout implements Initializable {
         TreeItem<String> item = treeView.getSelectionModel().getSelectedItem();
 
         if(item != null)
-            viewLoader.load(mainPane, item.getValue());
+            viewLoader.chooseView(mainPane, item.getValue());
     }
 }

@@ -2,23 +2,9 @@ package GUI.Controllers;
 
 import BUSINESS.CurrentUser;
 import BUSINESS.create.InsertUser;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 public class CreateUser {
-
-    public CreateUser() {
-        CurrentUser user = CurrentUser.getInstance();
-
-        //Don't load the form if the user is not admin!!!
-        if(user.getUserId() == 1) {
-
-        }
-    }
-
     public TextField fullName;
     public TextField username;
     public PasswordField password;
@@ -28,6 +14,8 @@ public class CreateUser {
     public Label invalidData;
 
     public void submitForm() {
+        invalidData.setVisible(false);
+
         String fullNameText = fullName.getText();
         String usernameText = username.getText();
         String passwordText = password.getText();
@@ -40,6 +28,7 @@ public class CreateUser {
         try {
             InsertUser.create(fullNameText, usernameText, passwordText, admin);
         } catch (Exception e) {
+            invalidData.setVisible(true);
             invalidData.setText(e.getMessage());
         }
     }

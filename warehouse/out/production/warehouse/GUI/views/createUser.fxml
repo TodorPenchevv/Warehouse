@@ -12,14 +12,14 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateUser">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Създай нов потребител">
+      <Label layoutX="29.0" layoutY="26.0" text="Създай нов потребител">
          <font>
-            <Font size="36.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <VBox layoutX="14.0" layoutY="82.0" prefHeight="315.0" prefWidth="300.0" spacing="15.0">
+      <VBox layoutX="31.0" layoutY="97.0" prefHeight="315.0" prefWidth="300.0" spacing="15.0">
          <children>
-            <TextField fx:id="name" prefHeight="25.0" prefWidth="240.0" promptText="Име">
+            <TextField fx:id="fullName" prefHeight="25.0" prefWidth="240.0" promptText="Име">
                <font>
                   <Font size="16.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Font size="16.0" />
                </font>
             </PasswordField>
-            <PasswordField fx:id="password_confirm" prefHeight="25.0" prefWidth="240.0" promptText="Потвърди паролата">
+            <PasswordField fx:id="passwordConfirm" prefHeight="25.0" prefWidth="240.0" promptText="Потвърди паролата">
                <font>
                   <Font size="16.0" />
                </font>
@@ -44,12 +44,12 @@
                   <Font size="16.0" />
                </font>
             </CheckBox>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="300.0" text="Създай">
+            <Button fx:id="submitForm" mnemonicParsing="false" onAction="#submitForm" prefHeight="35.0" prefWidth="300.0" text="Създай">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Label fx:id="invalidData" prefHeight="25.0" prefWidth="300.0" text="Грешка" textFill="RED">
+            <Label fx:id="invalidData" prefHeight="25.0" prefWidth="300.0" text="Грешка" textFill="RED" visible="false" wrapText="true">
                <font>
                   <Font size="16.0" />
                </font>
