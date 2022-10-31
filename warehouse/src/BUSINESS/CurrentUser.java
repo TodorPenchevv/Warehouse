@@ -2,9 +2,9 @@ package BUSINESS;
 
 public class CurrentUser {
     private static CurrentUser instance = new CurrentUser();
-    private static int userId;
-    private static int roleId;
-    private static boolean loggedIn = false;
+    private int userId;
+    private int roleId;
+    private boolean loggedIn = false;
 
     //Singleton because we can only have one user at the same time
     public static CurrentUser getInstance()
@@ -14,10 +14,10 @@ public class CurrentUser {
 
     //Setting logged-in user data
     //userId and roleId are enough
-    public static void login(int userId, int roleId)
+    public void login(int userId, int roleId)
     {
-        userId = userId;
-        roleId = roleId;
+        this.userId = userId;
+        this.roleId = roleId;
         loggedIn = true;
     }
 
@@ -26,15 +26,15 @@ public class CurrentUser {
     //The user won't be able to access any other menu until he/she enters
     //valid authentication data, so there is no need for logout
     //But just in case... :)
-    public static void logout() {
+    public void logout() {
          loggedIn = false;
     }
 
-    public static int getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public static int getRoleId() {
+    public int getRoleId() {
         return roleId;
     }
 }
