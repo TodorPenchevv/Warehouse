@@ -3,19 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoiceGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoiceGood.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Good.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Good.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Invoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Invoice_Good.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Invoice_Good.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Partner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Partner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Transaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoiceGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoiceGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Good.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Invoice_Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Invoice_Good.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Partner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Partner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
