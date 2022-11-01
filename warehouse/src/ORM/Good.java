@@ -14,6 +14,7 @@ public class Good {
     private String good;
     private int quantity;
     private double price;
+    private int minQuantity;
 
     @OneToMany(mappedBy = "good")
     private List<Invoice_Good> invoice_goods = new ArrayList<Invoice_Good>();
@@ -50,6 +51,14 @@ public class Good {
         this.price = price;
     }
 
+    public int getMinQuantity() {
+        return minQuantity;
+    }
+
+    public void setMinQuantity(int minQuantity) {
+        this.minQuantity = minQuantity;
+    }
+
     public List<Invoice_Good> getInvoice_goods() {
         return invoice_goods;
     }
@@ -58,10 +67,11 @@ public class Good {
         this.invoice_goods = invoice_goods;
     }
 
-    public Good(String good, int quantity, double price) {
+    public Good(String good, int quantity, double price, int minQuantity) {
         this.good = good;
         this.quantity = quantity;
         this.price = price;
+        this.minQuantity = minQuantity;
     }
 
     public Good() {

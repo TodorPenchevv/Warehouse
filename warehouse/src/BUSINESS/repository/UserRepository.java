@@ -22,28 +22,15 @@ public class UserRepository implements Repository {
 
     public List<User> findByUsername(String username) {
         Session session = GetSession.getSession();
+
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
-        Root<User> userRoot = criteriaQuery.from(User.class);
+        Root<User> root = criteriaQuery.from(User.class);
+        criteriaQuery.where(criteriaBuilder.like(root.get("username"), username));
 
-        //Selecting user by username
-        criteriaQuery.where(
-                criteriaBuilder.equal(userRoot.get("username"), username)
-        );
-
-        //Setting Users table for the select
-        CriteriaQuery<User> select = criteriaQuery.select(userRoot);
-        //Creating Hibernate typed query with session
-        TypedQuery<User> query = session.createQuery(select);
-
-        //Getting only one result
-        query.setFirstResult(0);
-        query.setMaxResults(1);
-
-        //Return list of results
-        List<User> results = query.getResultList();
+        List<User> result = session.createQuery(criteriaQuery).getResultList();
 
         session.close();
-        return results;
+        return result;
     }
 }
