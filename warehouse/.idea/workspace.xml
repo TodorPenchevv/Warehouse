@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertGood.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoiceGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/InsertInvoiceGood.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/TempGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/create/TempGood.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Good.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Good.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoiceGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoiceGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/TempGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/TempGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Good.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
