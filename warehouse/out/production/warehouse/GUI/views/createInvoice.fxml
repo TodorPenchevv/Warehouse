@@ -8,8 +8,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -20,64 +22,78 @@
                 <Font name="System Bold" size="36.0" />
             </font>
         </Label>
-      <Label layoutX="29.0" layoutY="124.0" text="Избор на партньор">
+        <ComboBox layoutX="12.0" layoutY="119.0" prefHeight="25.0" prefWidth="287.0" />
+      <RadioButton layoutX="14.0" layoutY="154.0" mnemonicParsing="false" text="Доставка">
          <font>
             <Font size="16.0" />
          </font>
-      </Label>
-      <ComboBox layoutX="29.0" layoutY="155.0" prefHeight="25.0" prefWidth="259.0" promptText="                                                                                                                                                                                  " />
-      <RadioButton layoutX="29.0" layoutY="206.0" mnemonicParsing="false" text="Доставка">
+         <toggleGroup>
+            <ToggleGroup fx:id="type" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="190.0" layoutY="154.0" mnemonicParsing="false" text="Изписване" toggleGroup="$type">
          <font>
             <Font size="16.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="179.0" layoutY="206.0" mnemonicParsing="false" text="Изписване">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </RadioButton>
-      <VBox layoutX="300.0" layoutY="102.0" prefHeight="698.0" prefWidth="761.0" spacing="15.0">
+        <TableView fx:id="itemsList" layoutX="14.0" layoutY="200.0" prefHeight="535.0" prefWidth="287.0">
+            <columns>
+                <TableColumn fx:id="listGood" prefWidth="75.0" text="Стока" />
+                <TableColumn fx:id="listPrice" prefWidth="75.0" text="Цена" />
+                <TableColumn fx:id="listQuantity" prefWidth="75.0" text="Наличност" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+      <HBox layoutX="14.0" layoutY="750.0" prefHeight="45.0" prefWidth="287.0" spacing="15.0">
          <children>
-            <TableView prefHeight="618.0" prefWidth="416.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Стока" />
-                <TableColumn prefWidth="75.0" text="Цена" />
-                  <TableColumn prefWidth="75.0" text="Количество" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="729.0" text="Тотална цена: 0">
+             <TextField fx:id="quantityField" prefHeight="35.0" prefWidth="195.0" promptText="Количество">
                <font>
                   <Font size="16.0" />
                </font>
-            </Label>
-             <HBox alignment="CENTER_RIGHT" spacing="15.0">
-                 <children>
-                     <TextField promptText="Стока">
-                     <font>
-                        <Font size="16.0" />
-                     </font></TextField>
-                     <TextField promptText="Количество">
-                     <font>
-                        <Font size="16.0" />
-                     </font></TextField>
-                     <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Добави">
-                     <font>
-                        <Font size="16.0" />
-                     </font></Button>
-                 </children>
-             </HBox>
+            </TextField>
+             <Button fx:id="addItemBtn" mnemonicParsing="false" onAction="#addItem" text="Добави">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
-         <padding>
-            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-         </padding>
-      </VBox>
-      <Button layoutX="29.0" layoutY="255.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="259.0" text="Създай">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+        <VBox layoutX="300.0" layoutY="102.0" prefHeight="698.0" prefWidth="761.0" spacing="15.0">
+            <children>
+                <TableView prefHeight="618.0" prefWidth="416.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="Стока" />
+                        <TableColumn prefWidth="75.0" text="Цена" />
+                        <TableColumn prefWidth="75.0" text="Количество" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="123.0" text="Тотална цена: 0">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Region prefHeight="35.0" prefWidth="292.0" />
+                        <Button onAction="#create" mnemonicParsing="false" prefHeight="35.0" prefWidth="287.0" text="Създай">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+        </VBox>
     </children>
 </AnchorPane>

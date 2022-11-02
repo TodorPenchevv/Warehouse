@@ -8,7 +8,7 @@ public class Name implements Validator {
     }
 
     public boolean validate() {
-        //price validation
+        //name validation
             //if not valid return false
         return true;
     }

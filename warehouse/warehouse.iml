@@ -10,5 +10,6 @@
     <orderEntry type="library" name="Hibernate" level="application" />
     <orderEntry type="library" name="oracle_jdbc8" level="application" />
     <orderEntry type="library" name="ojdbc8" level="application" />
+    <orderEntry type="library" name="log4j-core-2.19.0" level="application" />
   </component>
 </module>
