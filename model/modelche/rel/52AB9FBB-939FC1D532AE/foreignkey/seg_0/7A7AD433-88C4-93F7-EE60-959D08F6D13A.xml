@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F9EDB723-24B0-9067-1A52-69CD676027C0" containerWithKeyObject="460F3D0C-EB3D-3413-7AC8-65F805EED78D" localFKIndex="CD505A87-96C2-9DF0-906B-92F5F40CFE45" name="Suppliers_Partners_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7A7AD433-88C4-93F7-EE60-959D08F6D13A" containerWithKeyObject="C2D869B0-62D9-AD32-3457-7135B5E29448" localFKIndex="155D4481-BE1F-199D-4C75-9C1AA74A1228" name="Invoices_Partners_FK">
 <createdBy>Glvatarq</createdBy>
-<createdTime>2022-10-18 13:24:06 UTC</createdTime>
+<createdTime>2022-10-28 14:30:55 UTC</createdTime>
 <ownerDesignName>modelche</ownerDesignName>
 <referredTableLongName>Partners</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
