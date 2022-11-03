@@ -16,17 +16,22 @@ public class InsertInvoice implements Insert{
 
         User user = session.get(User.class, userID);
         user.getInvoices().add(newInvoice);
+        newInvoice.setUser(user);
+
         Partner partner = session.get(Partner.class, partnerID);
         partner.getInvoices().add(newInvoice);
+        newInvoice.setPartner(partner);
+
         Transaction transaction = session.get(Transaction.class, transactionID);
         user.getInvoices().add(newInvoice);
+        newInvoice.setTransaction(transaction);
 
+        session.save(newInvoice);
         session.update(user);
         session.update(partner);
         session.update(transaction);
-        session.save(newInvoice);
-        session.getTransaction().commit();
 
+        session.getTransaction().commit();
 
 
         for (TempGood good : goods){

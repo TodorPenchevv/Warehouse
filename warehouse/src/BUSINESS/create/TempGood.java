@@ -3,7 +3,7 @@ package BUSINESS.create;
 public class TempGood {
     private int id;
     private int quantity;
-    private int price;
+    private double price;
 
     public int getId() {
         return id;
@@ -21,7 +21,7 @@ public class TempGood {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -29,7 +29,7 @@ public class TempGood {
         this.price = price;
     }
 
-    public TempGood(int id, int quantity, int price) {
+    public TempGood(int id, int quantity, double price) {
         this.id = id;
         this.quantity = quantity;
         this.price = price;

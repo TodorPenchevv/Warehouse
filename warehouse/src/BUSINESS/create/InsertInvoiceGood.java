@@ -12,8 +12,12 @@ public class InsertInvoiceGood implements Insert{
 
         Invoice invoice = session.get(Invoice.class, invoiceID);
         invoice.getInvoice_goods().add(newInvoiceGood);
+        newInvoiceGood.setInvoice(invoice);
+
         Good good = session.get(Good.class, goodID);
         good.getInvoice_goods().add(newInvoiceGood);
+        newInvoiceGood.setGood(good);
+
         Register register = session.get(Register.class, 1);
 
         double newBalance;
@@ -30,10 +34,10 @@ public class InsertInvoiceGood implements Insert{
         register.setBalance(newBalance);
         good.setQuantity(newQuantity);
 
+        session.save(newInvoiceGood);
         session.update(invoice);
         session.update(good);
         session.update(register);
-        session.save(newInvoiceGood);
         session.getTransaction().commit();
     }
 }
