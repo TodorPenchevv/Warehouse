@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.Login">
    <children>
-      <Label layoutX="218.0" layoutY="140.0" text="Складова програма" textAlignment="CENTER">
+      <Label layoutX="408.0" layoutY="149.0" text="Складова програма" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <Label fx:id="errorMsg" layoutX="287.0" layoutY="289.0" prefHeight="26.0" prefWidth="300.0" text="Грешно потребителско име или парола" textFill="RED" visible="false">
+      <Label fx:id="errorMsg" layoutX="489.0" layoutY="289.0" prefHeight="26.0" prefWidth="300.0" text="Грешно потребителско име или парола" textFill="RED" visible="false">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <VBox layoutX="287.0" layoutY="330.0" prefWidth="300.0" spacing="20.0">
+      <VBox layoutX="490.0" layoutY="328.0" prefWidth="300.0" spacing="20.0">
          <children>
             <TextField fx:id="username" prefHeight="25.0" prefWidth="326.0" promptText="Потребител">
                <font>
