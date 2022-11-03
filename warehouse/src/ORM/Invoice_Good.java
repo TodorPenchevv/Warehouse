@@ -15,11 +15,11 @@ public class Invoice_Good {
     private double price;
 
     @ManyToOne
-    @JoinColumn(name = "invoice_id", nullable = false)
+    @JoinColumn(name = "invoice_id")
     private Invoice invoice;
 
     @ManyToOne
-    @JoinColumn(name = "good_id", nullable = false)
+    @JoinColumn(name = "good_id")
     private Good good;
 
     public int getId() {

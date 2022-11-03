@@ -19,7 +19,7 @@ public class User {
     private List<Invoice> invoices = new ArrayList<Invoice>();
 
     @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id")
     private Role role;
 
     public int getId() {

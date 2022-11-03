@@ -20,15 +20,15 @@ public class Invoice {
     private List<Invoice_Good> invoice_goods = new ArrayList<Invoice_Good>();
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "partner_id", nullable = false)
+    @JoinColumn(name = "partner_id")
     private Partner partner;
 
     @ManyToOne
-    @JoinColumn(name = "transaction_id", nullable = false)
+    @JoinColumn(name = "transaction_id")
     private Transaction transaction;
 
     public int getId() {
