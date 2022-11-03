@@ -79,10 +79,22 @@ public class Lister {
         }
     }
 
-    //Availability in the warehouse: Probably availability of different goods, which sdould be covered by listGoods()
+    //Check for a specific good
+    public void checkGood(String goodStr){
+        List<Good> goods = new GoodRepository().findByGood(goodStr);
+        if (goods.isEmpty()){
 
-    //Getting money flow data for given period, kind of combining last 2 query requirements from the PDF
-    public void moneyFlow(Calendar start, Calendar end){
+            //code to be executed in the UI if the good does not exist in the database
+        }
+        else {
+            Good good = goods.get(0);
+
+            //code to be executed in the UI with if the good exists in the database
+        }
+    }
+
+    //Getting proceed-expense-profit data for given period, kind of combining last 2 query requirements from the PDF
+    public void getMonetaryResults(Calendar start, Calendar end){
         double undefined = 0, expenses = 0, proceeds = 0, profit = 0;
 
         List<Invoice> invoices = new InvoiceRepository().findByPeriod(start, end);
@@ -101,5 +113,32 @@ public class Lister {
         profit = proceeds - expenses;
 
         //code to be executed in the UI with given data
+    }
+
+    //Listing all transactions for a given period, possibly sale rows in green and purchase rows in red
+    public void getMoneyFlow(Calendar start, Calendar end){
+        Calendar calendar;
+        double transactionValue = 0;
+        String partner;
+
+        List<Invoice> invoices = new InvoiceRepository().findByPeriod(start, end);
+
+        for (Invoice invoice : invoices){
+            calendar = invoice.getCalendar();
+            partner = invoice.getPartner().getName();
+
+            for (Invoice_Good invoice_good : invoice.getInvoice_goods()){
+                transactionValue += invoice_good.getQuantity()*invoice_good.getPrice();
+            }
+            if (invoice.getTransaction().getTransaction().equals(Transactions.PURCHASE)){
+
+                //code to be executed in the UI with if the transaction was a purchase
+            }
+            else{
+
+                //code to be executed in the UI with if the transaction was a sale
+            }
+            transactionValue = 0;
+        }
     }
 }
