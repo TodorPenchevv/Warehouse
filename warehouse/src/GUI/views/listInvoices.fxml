@@ -8,43 +8,41 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ListInvoice">
+<AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ListInvoices">
    <children>
       <VBox prefHeight="800.0" prefWidth="1050.0" spacing="10.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="716.0" spacing="15.0">
                <children>
-                   <Label prefHeight="53.0" prefWidth="322.0" text="Списък с фактури">
+                   <Label prefHeight="53.0" prefWidth="331.0" text="Списък с фактури">
                        <font>
                            <Font name="System Bold" size="36.0" />
                        </font>
                    </Label>
-                  <Region prefHeight="85.0" prefWidth="132.0" HBox.hgrow="ALWAYS" />
                   <Label text="От">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <DatePicker />
+                  <DatePicker fx:id="start" />
                   <Label prefWidth="21.0" text="До">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <DatePicker />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Потвърди" />
+                  <DatePicker fx:id="end" />
+                  <Button fx:id="button" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="31.0" prefWidth="97.0" text="Потвърди" />
                </children>
             </HBox>
-            <TableView prefHeight="700.0" prefWidth="1029.0">
+            <TableView fx:id="table" prefHeight="700.0" prefWidth="1029.0">
               <columns>
-                <TableColumn text="Дата" />
-                <TableColumn text="Тип" />
-                  <TableColumn text="Партньор" />
-                  <TableColumn text="Служител" />
+                <TableColumn fx:id="date" text="Дата" />
+                <TableColumn fx:id="type" text="Тип" />
+                  <TableColumn fx:id="partner" text="Партньор" />
+                  <TableColumn fx:id="user" text="Служител" />
                   <TableColumn text="Детайли" />
               </columns>
                <columnResizePolicy>
