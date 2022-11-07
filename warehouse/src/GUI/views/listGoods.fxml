@@ -12,7 +12,7 @@
     <children>
         <VBox prefHeight="800.0" prefWidth="1050.0" spacing="10.0">
             <children>
-                <Label prefHeight="53.0" prefWidth="385.0" text="Наличности на стоки">
+                <Label prefHeight="53.0" prefWidth="385.0" text="Списък с Наличности">
                     <font>
                         <Font name="System Bold" size="36.0" />
                     </font>

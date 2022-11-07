@@ -29,38 +29,47 @@ public class ViewManager {
     //we are loading the corresponding view file (fxml)
     public void chooseView(AnchorPane pane, String option) {
         switch(option) {
-            case "Оператор или Администратор":
+            case "Създаване на Потребител":
                 this.load(pane, "views/createUser.fxml");
                 break;
-            case "Клиент или Доставчик":
+            case "Справка за Потребител":
+                this.load(pane, "views/userQuery.fxml");
+                break;
+            case "Създаване на Партньор":
                 this.load(pane, "views/createPartner.fxml");
                 break;
-            case "Каса":
-                this.load(pane, "views/createRegister.fxml");
+            case "Справка за Партньор":
+                this.load(pane, "views/partnerQuery.fxml");
                 break;
-            case "Нова стока":
+            case "Създаване на Стока":
                 this.load(pane, "views/createGood.fxml");
                 break;
-            case "Наличности":
+            case "Списък с Наличности":
                 this.load(pane, "views/listGoods.fxml");
                 break;
-            case "Нова фактура":
+            case "Справка за Стока":
+                this.load(pane, "views/goodQuery.fxml");
+                break;
+            case "Създаване на Фактура":
                 this.load(pane, "views/createInvoice.fxml");
                 break;
-            case "Списък с фактури":
-                this.load(pane, "views/listInvoices.fxml");
+            case "Списък с Изписвания/Доставки":
+                this.load(pane, "views/listDeals.fxml");
                 break;
-            case "Разходи, Приходи, Печалби":
-                this.load(pane, "views/expenses.fxml");
+            case "Създаване на Каса":
+                this.load(pane, "views/createRegister.fxml");
                 break;
-            /*case "Приходи":
-                this.load(pane, "views/income.fxml");
+            case "Наличност в Каса":
+                this.load(pane, "views/currentBudget.fxml");
                 break;
-            case "Печалби":
-                this.load(pane, "views/profit.fxml");
-                break;*/
-            case "Движение на наличността":
-                this.load(pane, "views/movement.fxml");
+            case "Списък с Транзакции":
+                this.load(pane, "views/listTransactions.fxml");
+                break;
+            case "Приходи - Разходи - Печалба":
+                this.load(pane, "views/financialInfo.fxml");
+                break;
+            case "TEST":
+                this.load(pane, "views/listInvoices.fxml"); //test
                 break;
         }
     }

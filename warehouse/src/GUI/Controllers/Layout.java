@@ -26,24 +26,30 @@ public class Layout implements Initializable {
         TreeItem<String> rootItem = new TreeItem<>();
         rootItem.setExpanded(true);
 
-        TreeItem<String> create = Branch.create("Създай...", rootItem);
-        Branch.create("Оператор или Администратор", create);
-        Branch.create("Клиент или Доставчик", create);
-        Branch.create("Каса", create);
+        TreeItem<String> users = Branch.create("Работа с Потребители", rootItem);
+        Branch.create("Създаване на Потребител", users);
+        Branch.create("Справка за Потребител", users);
 
-        TreeItem<String> goods = Branch.create("Стоки", rootItem);
-        Branch.create("Нова стока", goods);
-        Branch.create("Наличности", goods);
+        TreeItem<String> partners = Branch.create("Работа с Партньори", rootItem);
+        Branch.create("Създаване на Партньор", partners);
+        Branch.create("Справка за Партньор", partners);
 
-        TreeItem<String> invoice = Branch.create("Фактури", rootItem);
-        Branch.create("Нова фактура", invoice);
-        TreeItem<String> invoicesList = Branch.create("Списък с фактури", invoice);
-        Branch.create("Разходи, Приходи, Печалби", invoice);
-        //Branch.create("Приходи", invoice);
-        //Branch.create("Печалби", invoice);
+        TreeItem<String> goods = Branch.create("Работа със Стоки", rootItem);
+        Branch.create("Създаване на Стока", goods);
+        Branch.create("Списък с Наличности", goods);
+        Branch.create("Справка за Стока", goods);
 
-        TreeItem<String> register = Branch.create("Каса", rootItem);
-        Branch.create("Движение на наличността", invoice);
+        TreeItem<String> invoices = Branch.create("Работа с Фактури", rootItem);
+        Branch.create("Създаване на Фактура", invoices);
+        Branch.create("Списък с Изписвания/Доставки", invoices);
+
+        TreeItem<String> register = Branch.create("Работа с Каса", rootItem);
+        Branch.create("Създаване на Каса", register);
+        Branch.create("Наличност в Каса", register);
+        Branch.create("Списък с Транзакции", register);
+        Branch.create("Приходи - Разходи - Печалба", register);
+
+        TreeItem<String> TEST = Branch.create("TEST", rootItem);
 
         treeView.setShowRoot(false);
         treeView.setRoot(rootItem);

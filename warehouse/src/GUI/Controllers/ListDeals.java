@@ -1,4 +1,4 @@
 package GUI.Controllers;
 
-public class Expenses {
+public class ListDeals {
 }

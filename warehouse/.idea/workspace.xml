@@ -3,14 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateGood.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListGoods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListGoods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListInvoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListInvoices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/Rows/ListInvoicesRow.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createGood.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createGood.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CreateGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CreateGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ListGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ListGoods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ListInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ListInvoices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/Expenses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/Layout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ListInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ListInvoices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/Movement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CustomRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CustomRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SceneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ViewManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/views/createGood.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createGood.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/createInvoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createInvoice.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/createPartner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createPartner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/createUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/expenses.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/layout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/views/listGoods.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/listGoods.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/views/listInvoices.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/listInvoices.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/movement.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

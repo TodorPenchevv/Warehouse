@@ -15,7 +15,7 @@
             fx:controller="GUI.Controllers.CreatePartner"
             prefHeight="400.0" prefWidth="600.0">
     <children>
-        <Label layoutX="29.0" layoutY="26.0" text="Създай нов партньор">
+        <Label layoutX="29.0" layoutY="26.0" text="Създаване на Партньор">
             <font>
                 <Font name="System Bold" size="36.0" />
             </font>

@@ -17,7 +17,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateInvoice">
     <children>
-        <Label layoutX="29.0" layoutY="26.0" text="Създаване на нова фактура">
+        <Label layoutX="29.0" layoutY="26.0" text="Създаване на Фактура">
             <font>
                 <Font name="System Bold" size="36.0" />
             </font>

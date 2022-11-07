@@ -49,7 +49,7 @@ public class ListInvoices {
         date.setCellValueFactory(new PropertyValueFactory<>("date"));
         type.setCellValueFactory(new PropertyValueFactory<>("type"));
         partner.setCellValueFactory(new PropertyValueFactory<>("partner"));
-        user.setCellValueFactory(new PropertyValueFactory<>("employee"));
+        user.setCellValueFactory(new PropertyValueFactory<>("user"));
 
 
         table.setItems(list);

@@ -1,7 +1,5 @@
 package GUI;
 
-import java.util.Calendar;
-
 public class CustomRow {
     private String date;
     private String type;

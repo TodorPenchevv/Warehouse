@@ -1,4 +1,4 @@
 package GUI.Controllers;
 
-public class Movement {
+public class GoodQuery {
 }
