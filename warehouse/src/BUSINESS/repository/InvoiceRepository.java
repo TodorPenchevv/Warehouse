@@ -12,9 +12,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class InvoiceRepository {
-
-
-    public List<Invoice> findByPeriod(Calendar start, Calendar end) {
+    public static List<Invoice> findByPeriod(Calendar start, Calendar end) {
         Session session = GetSession.getSession();
 
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -27,5 +25,4 @@ public class InvoiceRepository {
         session.close();
         return result;
     }
-
 }

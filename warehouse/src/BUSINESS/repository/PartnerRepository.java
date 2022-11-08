@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class PartnerRepository {
-    public List<Partner> findByName(String name) {
+    public static List<Partner> findByName(String name) {
         Session session = GetSession.getSession();
 
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();

@@ -15,7 +15,7 @@ public class Lister {
         double price;
         String good;
 
-        List<Good> goods = new GoodRepository().findAll();
+        List<Good> goods = GoodRepository.findAll();
         for (Good row : goods){
             id = row.getId();
             quantity = row.getQuantity();
@@ -81,7 +81,7 @@ public class Lister {
 
     //Check for a specific good
     public void checkGood(String goodStr){
-        List<Good> goods = new GoodRepository().findByGood(goodStr);
+        List<Good> goods = GoodRepository.findByGood(goodStr);
         if (goods.isEmpty()){
 
             //code to be executed in the UI if the good does not exist in the database
@@ -97,7 +97,7 @@ public class Lister {
     public void getMonetaryResults(Calendar start, Calendar end){
         double undefined = 0, expenses = 0, proceeds = 0, profit = 0;
 
-        List<Invoice> invoices = new InvoiceRepository().findByPeriod(start, end);
+        List<Invoice> invoices = InvoiceRepository.findByPeriod(start, end);
 
         for (Invoice invoice : invoices){
             for (Invoice_Good invoice_good : invoice.getInvoice_goods()){

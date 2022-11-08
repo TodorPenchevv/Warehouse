@@ -19,7 +19,7 @@ public class Login {
 
     public void loginButtonClicked() throws Exception {
         //Find user by username
-        List<User> users = new UserRepository().findByUsername(username.getText());
+        List<User> users = UserRepository.findByUsername(username.getText());
 
         if(users.isEmpty()) {
             errorMsg.setVisible(true);

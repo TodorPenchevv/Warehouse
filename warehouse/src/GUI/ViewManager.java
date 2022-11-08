@@ -60,7 +60,7 @@ public class ViewManager {
                 this.load(pane, "views/createRegister.fxml");
                 break;
             case "Наличност в Каса":
-                this.load(pane, "views/currentBudget.fxml");
+                this.load(pane, "views/currentBalance.fxml");
                 break;
             case "Списък с Транзакции":
                 this.load(pane, "views/listTransactions.fxml");

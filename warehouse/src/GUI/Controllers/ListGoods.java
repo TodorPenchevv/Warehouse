@@ -23,7 +23,7 @@ public class ListGoods implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Good> list  = FXCollections.observableArrayList();
-        list.addAll(new GoodRepository().findAll());
+        list.addAll(GoodRepository.findAll());
         good.setCellValueFactory(new PropertyValueFactory<>("good"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));

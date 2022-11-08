@@ -16,7 +16,7 @@ public class Invoice {
     @Temporal(TemporalType.DATE)
     private Calendar calendar;
 
-    @OneToMany(mappedBy = "invoice")
+    @OneToMany(mappedBy = "invoice", fetch = FetchType.EAGER)
     private List<Invoice_Good> invoice_goods = new ArrayList<Invoice_Good>();
 
     @ManyToOne

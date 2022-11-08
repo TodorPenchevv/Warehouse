@@ -40,9 +40,9 @@
             <TableView fx:id="table" prefHeight="700.0" prefWidth="1029.0">
               <columns>
                 <TableColumn fx:id="date" text="Дата" />
-                <TableColumn fx:id="type" text="Тип" />
-                  <TableColumn fx:id="partner" text="Партньор" />
-                  <TableColumn fx:id="user" text="Служител" />
+                <TableColumn fx:id="transaction" text="Тип" />
+                  <TableColumn fx:id="partnerName" text="Партньор" />
+                  <TableColumn fx:id="userName" text="Служител" />
                   <TableColumn text="Детайли" />
               </columns>
                <columnResizePolicy>

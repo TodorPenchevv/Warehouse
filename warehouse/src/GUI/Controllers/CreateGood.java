@@ -2,7 +2,6 @@ package GUI.Controllers;
 
 import BUSINESS.create.InsertGood;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 
@@ -13,10 +12,13 @@ public class CreateGood {
     @FXML private TextField minQuantity;
 
     public void createButtonClicked(){
-        InsertGood.create(good.getText(),
-                Integer.parseInt(quantity.getText()),
-                Double.parseDouble(price.getText()),
-                Integer.parseInt(minQuantity.getText()));
-    }
+        String newGood = good.getText();
+        int newQuantity = Integer.parseInt(quantity.getText());
+        int newMinQuantity = Integer.parseInt(minQuantity.getText());
+        double newPrice = Double.parseDouble(price.getText());
 
+        //validation
+
+        InsertGood.create(newGood, newQuantity, newPrice, newMinQuantity);
+    }
 }

@@ -11,8 +11,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class GoodRepository {
-
-    public List<Good> findAll(){
+    public static List<Good> findAll(){
         Session session = GetSession.getSession();
 
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -25,7 +24,7 @@ public class GoodRepository {
         return result;
     }
 
-    public List<Good> findByGood(String good) {
+    public static List<Good> findByGood(String good) {
         Session session = GetSession.getSession();
 
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();

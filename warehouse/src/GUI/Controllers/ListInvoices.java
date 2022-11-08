@@ -18,9 +18,9 @@ public class ListInvoices {
 
     @FXML private TableView<CustomRow> table;
     @FXML private TableColumn<CustomRow, Calendar> date;
-    @FXML private TableColumn<CustomRow, String> type;
-    @FXML private TableColumn<CustomRow, String> partner;
-    @FXML private TableColumn<CustomRow, String> user;
+    @FXML private TableColumn<CustomRow, String> transaction;
+    @FXML private TableColumn<CustomRow, String> partnerName;
+    @FXML private TableColumn<CustomRow, String> userName;
 
     public void submitButtonClicked(){
         LocalDate date1 = start.getValue();
@@ -31,25 +31,28 @@ public class ListInvoices {
         ObservableList<CustomRow> list  = FXCollections.observableArrayList();
 
         List<Invoice> invoices = new InvoiceRepository().findByPeriod(calendar1, calendar2);
-        String rowType, rowPartner, rowUser, rowCalendar;
+        String rowTransaction, rowPartnerName, rowUserName, rowDate;
 
 
         for (Invoice invoice : invoices){
-            rowType = invoice.getTransaction().getTransaction().toString();
-            rowPartner = invoice.getPartner().getName();
-            rowUser = invoice.getUser().getName();
+            rowTransaction = invoice.getTransaction().getTransaction().toString();
+            rowPartnerName = invoice.getPartner().getName();
+            rowUserName = invoice.getUser().getName();
+            rowDate = invoice.getCalendar().getTime().toString();
 
-            rowCalendar = invoice.getCalendar().getTime().toString();
 
-
-            CustomRow row = new CustomRow(rowCalendar, rowType, rowPartner, rowUser);
+            CustomRow row = new CustomRow.Builder()
+                    .withTransaction(rowTransaction)
+                    .withPartnerName(rowPartnerName)
+                    .withUserName(rowUserName)
+                    .withDate(rowDate).build();
             list.add(row);
         }
 
         date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        type.setCellValueFactory(new PropertyValueFactory<>("type"));
-        partner.setCellValueFactory(new PropertyValueFactory<>("partner"));
-        user.setCellValueFactory(new PropertyValueFactory<>("user"));
+        transaction.setCellValueFactory(new PropertyValueFactory<>("transaction"));
+        partnerName.setCellValueFactory(new PropertyValueFactory<>("partnerName"));
+        userName.setCellValueFactory(new PropertyValueFactory<>("userName"));
 
 
         table.setItems(list);

@@ -37,7 +37,7 @@
                         <Font size="16.0" />
                     </font>
                 </TextField>
-                <Button fx:id="submitForm" mnemonicParsing="false" onAction="#submitForm" prefHeight="35.0" prefWidth="300.0" text="Създай">
+                <Button fx:id="submitForm" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="35.0" prefWidth="300.0" text="Създай">
                     <font>
                         <Font size="16.0" />
                     </font>
