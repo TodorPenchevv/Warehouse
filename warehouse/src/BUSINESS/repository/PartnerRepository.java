@@ -1,6 +1,7 @@
 package BUSINESS.repository;
 
 import BUSINESS.GetSession;
+import ORM.Good;
 import ORM.Partner;
 import org.hibernate.Session;
 
@@ -10,6 +11,19 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class PartnerRepository {
+    public static List<Partner> findAll(){
+        Session session = GetSession.getSession();
+
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Partner> criteriaQuery = criteriaBuilder.createQuery(Partner.class);
+        criteriaQuery.from(Partner.class);
+
+        List<Partner> result = session.createQuery(criteriaQuery).getResultList();
+
+        session.close();
+        return result;
+    }
+
     public static List<Partner> findByName(String name) {
         Session session = GetSession.getSession();
 

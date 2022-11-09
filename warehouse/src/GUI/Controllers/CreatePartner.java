@@ -8,6 +8,7 @@ public class CreatePartner {
     @FXML private TextField partnerName;
     @FXML private TextField email;
     @FXML private TextField phone;
+    @FXML private Label successLabel;
    // @FXML private Label invalidData;
 
     public void submitButtonClicked() {
@@ -18,5 +19,6 @@ public class CreatePartner {
         //validation
 
         InsertPartner.create(newPartnerName, newPhone, newEmail);
+        successLabel.setText("Успешно Създаване!");
     }
 }

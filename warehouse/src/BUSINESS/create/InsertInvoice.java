@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class InsertInvoice implements Insert{
-    public static void create(Calendar calendar, List<TempGood> goods, int userID, int partnerID, int transactionID){
+    public static void create(Calendar calendar, List<Good> goods, int userID, int partnerID, int transactionID){
         Session session = GetSession.getSession();
         Invoice newInvoice = new Invoice(calendar);
 
@@ -34,7 +34,7 @@ public class InsertInvoice implements Insert{
         session.getTransaction().commit();
 
 
-        for (TempGood good : goods){
+        for (Good good : goods){
             InsertInvoiceGood.create(good.getQuantity(), good.getPrice(), newInvoice.getId(), good.getId(), session);
         }
 

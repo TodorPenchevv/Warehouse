@@ -2,54 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GUI/views/currentBalance.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/GoodRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/GoodRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/InvoiceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/InvoiceRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/Lister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/Lister.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/PartnerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/PartnerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/Repository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateGood.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreatePartner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreatePartner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CurrentBudget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/FinancialInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/FinancialInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListGoods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListGoods.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListInvoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/ListInvoices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/CustomRow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/CustomRow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/ViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/ViewManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createPartner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createPartner.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/currentBudget.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/financialInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/financialInfo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listInvoices.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listInvoices.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/ORM/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/ORM/Invoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/GoodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/GoodRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/InvoiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/InvoiceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/Lister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/Lister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/create/InsertInvoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/PartnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/PartnerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUSINESS/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CreateGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CreateGood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CreateInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CreateInvoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CreatePartner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CreatePartner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CreateRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CreateRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CurrentBudget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CurrentBalance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/FinancialInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/FinancialInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/GoodQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/GoodQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ListGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ListGoods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/CreateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/CreateUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/ListInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/ListInvoices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controllers/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CustomRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CustomRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ViewManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/createGood.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createGood.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/createInvoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createInvoice.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/views/createPartner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createPartner.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/views/createRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/views/currentBudget.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/views/financialInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/financialInfo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/views/goodQuery.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/goodQuery.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/views/listInvoices.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/listInvoices.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ORM/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/views/createUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/views/createUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/Partner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/Partner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

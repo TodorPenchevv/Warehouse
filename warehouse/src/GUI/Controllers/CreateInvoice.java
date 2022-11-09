@@ -1,70 +1,112 @@
 package GUI.Controllers;
 
+import BUSINESS.GetSession;
+import BUSINESS.create.InsertInvoice;
+import BUSINESS.repository.GoodRepository;
+import BUSINESS.repository.PartnerRepository;
 import ORM.Good;
+import ORM.Partner;
+import ORM.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.time.LocalDate;
+import java.util.*;
 
 public class CreateInvoice implements Initializable {
-    public TableView<Good> itemsList;
-    public TableColumn<Good, String> listGood, listPrice, listQuantity;
-    public TextField quantityField;
-    public Button addItemBtn;
+    @FXML private TableView<Good> goodsList;
+    @FXML private TableColumn<Good, String> listGood;
+    @FXML private TableColumn<Good, Double> listPrice;
+    @FXML private TableColumn<Good, Integer> listQuantity;
+
+    @FXML private TableView<Good> addedGoodsList;
+    @FXML private TableColumn<Good, String> addedGood;
+    @FXML private TableColumn<Good, Double> addedPrice;
+    @FXML private TableColumn<Good, Integer> addedQuantity;
+
+    @FXML private TextField quantityField;
+    @FXML private DatePicker dateField;
+    @FXML private ComboBox<Partner> partnerField;
+
+    @FXML private RadioButton saleRadio;
+    @FXML private RadioButton purchaseRadio;
+
+    @FXML private Label totalPriceLabel;
+    @FXML private Label successLabel;
+
+    private ObservableList<Good> addedGoods;
+    private double totalPrice;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Take the goods and load them in "itemsList"
-        //IDK why this is not setting the items in the table
-        itemsList.setItems(getGoods());
+        //List of all goods
+        listGood.setCellValueFactory(new PropertyValueFactory<>("good"));
+        listPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        listQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        goodsList.setItems(getGoods());
+
+        //List of picked goods
+        addedGoods  = FXCollections.observableArrayList();
+        addedGood.setCellValueFactory(new PropertyValueFactory<>("good"));
+        addedPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        addedQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        setPartners();
+
+        totalPrice = 0;
     }
 
-    public void addItem() {
-        //When the add button is clicked we check
-        //If the quantity is valid
-        //If the good is not already in the list
-
-        //Then we add the
+    public void addButtonClicked(){
+        Good good = goodsList.getSelectionModel().getSelectedItem();
+        good.setQuantity(Integer.parseInt(quantityField.getText()));
+        addedGoods.add(good);
+        addedGoodsList.setItems(addedGoods);
+        //shouldn't be able to add the same good more than once
+        //shouldn't be able to add more quantity than is available
+        totalPrice += good.getPrice()*good.getQuantity();
+        totalPriceLabel.setText("Тотална цена: "+totalPrice+"лв.");
     }
 
-    public void create() {
-        //Getting partner
-        //Getting invoice type
-        //Getting all items
+    public void createButtonClicked() {
+        //Date
+        LocalDate date1 = dateField.getValue();
+        Calendar invoiceDate = new GregorianCalendar(date1.getYear(), date1.getMonthValue()-1, date1.getDayOfMonth());
 
-        //If buying
-            //Check if the registry has the money to cover the payment
+        //User id = 1 because we dont have current user at the moment
 
-        try {
-            //Passing the data to Insert class to be validated and saved in the DB
-        } catch (Exception e) {
-            //Show massage for validation error
-        }
+        //Transaction Type
+        int transactionID;
+        if (saleRadio.isSelected()) //one radio must be selected
+            transactionID = 1;
+        else
+            transactionID = 2;
+
+        //Partner
+        Partner partner = partnerField.getSelectionModel().getSelectedItem();
+
+        //Goods
+        List<Good> goods = addedGoodsList.getItems();
+
+        InsertInvoice.create(invoiceDate, goods, 1, partner.getId(), transactionID);
+        successLabel.setText("Успешно Създаване!");
     }
 
     public ObservableList<Good> getGoods() {
-        //Just sample data !!!
-        Good good1 = new Good();
-        good1.setGood("banani");
-        good1.setPrice(9.99);
-        good1.setQuantity(100);
-        Good good2 = new Good();
-        good2.setGood("qbulki");
-        good2.setPrice(19.99);
-        good2.setQuantity(200);
-        Good good3 = new Good();
-        good3.setGood("portokali");
-        good3.setPrice(29.99);
-        good3.setQuantity(300);
+        List<Good> goods = GoodRepository.findAll();
+        ObservableList<Good> list = FXCollections.observableArrayList();
+        list.addAll(goods);
+        return list;
+    }
 
-        ObservableList<Good> goods = FXCollections.observableArrayList();
-        goods.add(good1);
-        goods.add(good2);
-        goods.add(good2);
-
-        return goods;
+    public void setPartners(){
+        List<Partner> partners = PartnerRepository.findAll();
+        ObservableList<Partner> list = FXCollections.observableArrayList();
+        list.addAll(partners);
+        partnerField.setItems(list);
     }
 }

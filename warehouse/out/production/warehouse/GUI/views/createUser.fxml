@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateUser">
+<AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateUser">
    <children>
       <Label layoutX="29.0" layoutY="26.0" text="Създаване на Потребител">
          <font>
@@ -49,6 +49,11 @@
                   <Font size="16.0" />
                </font>
             </Button>
+            <Label fx:id="successLabel">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
             <Label fx:id="invalidData" prefHeight="25.0" prefWidth="300.0" text="Грешка" textFill="RED" visible="false" wrapText="true">
                <font>
                   <Font size="16.0" />

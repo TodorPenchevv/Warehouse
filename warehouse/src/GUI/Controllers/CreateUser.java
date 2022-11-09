@@ -12,6 +12,7 @@ public class CreateUser {
     public CheckBox adminCheckbox;
     public Button submitForm;
     public Label invalidData;
+    public Label successLabel;
 
     public void submitForm() {
         invalidData.setVisible(false);
@@ -27,6 +28,7 @@ public class CreateUser {
 
         try {
             InsertUser.create(fullNameText, usernameText, passwordText, admin);
+            successLabel.setText("Успешно Създаване!");
         } catch (Exception e) {
             invalidData.setVisible(true);
             invalidData.setText(e.getMessage());

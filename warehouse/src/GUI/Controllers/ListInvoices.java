@@ -2,6 +2,7 @@ package GUI.Controllers;
 
 import BUSINESS.repository.InvoiceRepository;
 import GUI.CustomRow;
+import GUI.DateConverter;
 import ORM.Invoice;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,7 +39,7 @@ public class ListInvoices {
             rowTransaction = invoice.getTransaction().getTransaction().toString();
             rowPartnerName = invoice.getPartner().getName();
             rowUserName = invoice.getUser().getName();
-            rowDate = invoice.getCalendar().getTime().toString();
+            rowDate = DateConverter.convert(invoice.getCalendar());
 
 
             CustomRow row = new CustomRow.Builder()

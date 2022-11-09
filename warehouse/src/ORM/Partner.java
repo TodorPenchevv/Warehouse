@@ -66,4 +66,9 @@ public class Partner {
 
     public Partner() {
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
