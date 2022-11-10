@@ -1,6 +1,6 @@
 package GUI.Controllers;
 
-import GUI.Branch;
+import BUSINESS.tools.Branch;
 import GUI.ViewManager;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
@@ -32,7 +32,6 @@ public class Layout implements Initializable {
 
         TreeItem<String> partners = Branch.create("Работа с Партньори", rootItem);
         Branch.create("Създаване на Партньор", partners);
-        Branch.create("Справка за Партньор", partners);
 
         TreeItem<String> goods = Branch.create("Работа със Стоки", rootItem);
         Branch.create("Създаване на Стока", goods);
@@ -48,8 +47,7 @@ public class Layout implements Initializable {
         Branch.create("Наличност в Каса", register);
         Branch.create("Списък с Транзакции", register);
         Branch.create("Приходи - Разходи - Печалба", register);
-
-        TreeItem<String> TEST = Branch.create("TEST", rootItem);
+        
 
         treeView.setShowRoot(false);
         treeView.setRoot(rootItem);

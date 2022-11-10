@@ -1,12 +1,10 @@
 package GUI.Controllers;
 
-import BUSINESS.GetSession;
 import BUSINESS.create.InsertInvoice;
 import BUSINESS.repository.GoodRepository;
 import BUSINESS.repository.PartnerRepository;
 import ORM.Good;
 import ORM.Partner;
-import ORM.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

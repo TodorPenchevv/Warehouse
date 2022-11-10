@@ -16,17 +16,17 @@ import java.util.ResourceBundle;
 public class ListGoods implements Initializable {
 
     @FXML private TableView<Good> table;
-    @FXML private TableColumn<Good, String> good;
-    @FXML private TableColumn<Good, Double> price;
-    @FXML private TableColumn<Good, Integer> quantity;
+    @FXML private TableColumn<Good, String> goodColumn;
+    @FXML private TableColumn<Good, Double> priceColumn;
+    @FXML private TableColumn<Good, Integer> quantityColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Good> list  = FXCollections.observableArrayList();
         list.addAll(GoodRepository.findAll());
-        good.setCellValueFactory(new PropertyValueFactory<>("good"));
-        price.setCellValueFactory(new PropertyValueFactory<>("price"));
-        quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        goodColumn.setCellValueFactory(new PropertyValueFactory<>("good"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         table.setItems(list);
     }
 }

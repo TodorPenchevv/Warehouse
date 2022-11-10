@@ -37,7 +37,7 @@ public class Lister {
         Calendar calendar;
         List<Good> goods;
 
-        List<Invoice> invoices = new InvoiceRepository().findByPeriod(start, end);
+        List<Invoice> invoices = InvoiceRepository.findByPeriod(start, end);
         for (Invoice row : invoices){
             if (row.getTransaction().getTransaction().equals(transaction)){
                 invoice_id = row.getId();

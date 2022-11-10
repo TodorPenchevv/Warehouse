@@ -1,4 +1,9 @@
-package GUI;
+package BUSINESS.tools;
+
+import ORM.Good;
+import ORM.Invoice_Good;
+
+import java.util.List;
 
 public class CustomRow {
     private String userName;
@@ -7,7 +12,9 @@ public class CustomRow {
     private String good;
     private String date;
     private String transaction;
+    private String details;
     private double price;
+    private double totalPrice;
     private int quantity;
     private int minQuantity;
 
@@ -35,8 +42,16 @@ public class CustomRow {
         return transaction;
     }
 
+    public String getDetails(){
+        return details;
+    }
+
     public double getPrice() {
         return price;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
     public int getQuantity() {
@@ -54,7 +69,9 @@ public class CustomRow {
         this.good = builder.good;
         this.date = builder.date;
         this.transaction = builder.transaction;
+        this.details = builder.details;
         this.price = builder.price;
+        this.totalPrice = builder.totalPrice;
         this.quantity = builder.quantity;
         this.minQuantity = builder.minQuantity;
     }
@@ -67,7 +84,9 @@ public class CustomRow {
         private String good;
         private String date;
         private String transaction;
+        private String details;
         private double price;
+        private double totalPrice;
         private int quantity;
         private int minQuantity;
 
@@ -101,8 +120,18 @@ public class CustomRow {
             return this;
         }
 
+        public Builder withDetails(String details){
+            this.details = details;
+            return this;
+        }
+
         public Builder withPrice(Double price){
             this.price = price;
+            return this;
+        }
+
+        public Builder withTotalPrice(Double totalPrice){
+            this.totalPrice = totalPrice;
             return this;
         }
 
@@ -115,5 +144,12 @@ public class CustomRow {
        public CustomRow build(){
             return new CustomRow(this);
        }
+    }
+
+    public static String processDetails(List<Invoice_Good> list){
+        StringBuilder builder = new StringBuilder();
+        for (Invoice_Good ig : list)
+            builder.append(ig.getQuantity()).append("x ").append(ig.getGood().getGood()).append(", ").append(ig.getPrice()).append("лв. \n");
+        return builder.toString();
     }
 }

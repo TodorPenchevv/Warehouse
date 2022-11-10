@@ -38,9 +38,6 @@ public class ViewManager {
             case "Създаване на Партньор":
                 this.load(pane, "views/createPartner.fxml");
                 break;
-            case "Справка за Партньор":
-                this.load(pane, "views/partnerQuery.fxml");
-                break;
             case "Създаване на Стока":
                 this.load(pane, "views/createGood.fxml");
                 break;
@@ -67,9 +64,6 @@ public class ViewManager {
                 break;
             case "Приходи - Разходи - Печалба":
                 this.load(pane, "views/financialInfo.fxml");
-                break;
-            case "TEST":
-                this.load(pane, "views/listInvoices.fxml"); //test
                 break;
         }
     }

@@ -19,9 +19,9 @@
                 </Label>
                 <TableView fx:id="table" prefHeight="716.0" prefWidth="1030.0">
                     <columns>
-                        <TableColumn fx:id="good" text="Стока" />
-                        <TableColumn fx:id="price" text="Цена" />
-                        <TableColumn fx:id="quantity" text="Количество" />
+                        <TableColumn fx:id="goodColumn" text="Стока" />
+                        <TableColumn fx:id="priceColumn" text="Цена" />
+                        <TableColumn fx:id="quantityColumn" text="Количество" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
