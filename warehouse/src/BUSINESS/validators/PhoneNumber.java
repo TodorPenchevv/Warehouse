@@ -1,5 +1,7 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.InvalidPhoneNumberException;
+
 public class PhoneNumber implements Validator {
     private String number;
 
@@ -7,9 +9,14 @@ public class PhoneNumber implements Validator {
         this.number = number;
     }
 
-    public boolean validate() {
-        //phone number validation
-            //if not valid return false
+    public boolean validate() throws Exception {
+        if(!validFormat()) {
+            throw new InvalidPhoneNumberException();
+        }
+        return true;
+    }
+
+    private boolean validFormat() {
         return true;
     }
 }

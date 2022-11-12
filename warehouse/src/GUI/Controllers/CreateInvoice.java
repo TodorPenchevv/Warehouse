@@ -68,6 +68,7 @@ public class CreateInvoice implements Initializable {
         //shouldn't be able to add more quantity than is available
         totalPrice += good.getPrice()*good.getQuantity();
         totalPriceLabel.setText("Тотална цена: "+totalPrice+"лв.");
+        quantityField.setText("");
     }
 
     public void createButtonClicked() {

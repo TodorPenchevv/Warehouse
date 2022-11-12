@@ -8,7 +8,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         //JavaFX Setup
         SceneManager loadScene = new SceneManager();
-        loadScene.load(primaryStage, "Вход в системата", "views/layout.fxml");
+        loadScene.load(primaryStage, "Вход в системата", "views/login.fxml");
     }
 
     public static void main(String[] args) {

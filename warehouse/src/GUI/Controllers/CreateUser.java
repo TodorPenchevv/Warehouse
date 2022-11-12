@@ -28,6 +28,11 @@ public class CreateUser {
 
         try {
             InsertUser.create(fullNameText, usernameText, passwordText, admin);
+            fullName.setText("");
+            username.setText("");
+            password.setText("");
+            passwordConfirm.setText("");
+            adminCheckbox.setSelected(false);
             successLabel.setText("Успешно Създаване!");
         } catch (Exception e) {
             invalidData.setVisible(true);

@@ -1,5 +1,5 @@
 package BUSINESS.validators;
 
 public interface Validator {
-    boolean validate();
+    boolean validate() throws Exception;
 }

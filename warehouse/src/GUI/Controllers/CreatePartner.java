@@ -17,8 +17,14 @@ public class CreatePartner {
         String newEmail = email.getText();
 
         //validation
-
-        InsertPartner.create(newPartnerName, newPhone, newEmail);
-        successLabel.setText("Успешно Създаване!");
+        try {
+            InsertPartner.create(newPartnerName, newPhone, newEmail);
+            partnerName.setText("");
+            email.setText("");
+            phone.setText("");
+            successLabel.setText("Успешно Създаване!");
+        } catch (Exception e) {
+            e.getMessage();
+        }
     }
 }

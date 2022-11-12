@@ -13,15 +13,22 @@ public class CreateGood {
     @FXML private TextField minQuantity;
     @FXML private Label successLabel;
 
-    public void createButtonClicked(){
+    public void createButtonClicked() {
         String newGood = good.getText();
         int newQuantity = Integer.parseInt(quantity.getText());
         int newMinQuantity = Integer.parseInt(minQuantity.getText());
         double newPrice = Double.parseDouble(price.getText());
 
         //validation
-
-        InsertGood.create(newGood, newQuantity, newPrice, newMinQuantity);
-        successLabel.setText("Успешно Създаване!");
+        try {
+            InsertGood.create(newGood, newQuantity, newPrice, newMinQuantity);
+            good.setText("");
+            quantity.setText("");
+            minQuantity.setText("");
+            price.setText("");
+            successLabel.setText("Успешно Създаване!");
+        } catch (Exception e) {
+            e.getMessage();
+        }
     }
 }

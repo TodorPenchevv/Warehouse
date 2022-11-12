@@ -1,5 +1,8 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.InvalidPriceException;
+import BUSINESS.exceptions.NegativeNumberException;
+
 public class Price implements Validator {
     private String price;
 
@@ -7,9 +10,18 @@ public class Price implements Validator {
         this.price = price;
     }
 
-    public boolean validate() {
-        //price validation
-            //if not valid return false
+    public boolean validate() throws Exception {
+        if(negativePrice() || invalidPrice()) {
+            throw new InvalidPriceException(0, 100000);
+        }
+        return true;
+    }
+
+    private boolean negativePrice() {
+        return true;
+    }
+
+    private boolean invalidPrice() {
         return true;
     }
 }
