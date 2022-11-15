@@ -3,9 +3,9 @@ package BUSINESS.validators;
 import BUSINESS.exceptions.NegativeNumberException;
 
 public class Quantity implements Validator {
-    private String quantity;
+    private int quantity;
 
-    public Quantity(String quantity) {
+    public Quantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -17,6 +17,6 @@ public class Quantity implements Validator {
     }
 
     private boolean negativeQuantity() {
-        return true;
+        return quantity < 0;
     }
 }

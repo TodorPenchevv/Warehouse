@@ -4,9 +4,9 @@ import BUSINESS.exceptions.InvalidPriceException;
 import BUSINESS.exceptions.NegativeNumberException;
 
 public class Price implements Validator {
-    private String price;
+    private double price;
 
-    public Price(String price) {
+    public Price(double price) {
         this.price = price;
     }
 
@@ -18,10 +18,10 @@ public class Price implements Validator {
     }
 
     private boolean negativePrice() {
-        return true;
+        return price < 0;
     }
 
     private boolean invalidPrice() {
-        return true;
+        return price > 100000;
     }
 }

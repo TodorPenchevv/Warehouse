@@ -2,20 +2,22 @@ package GUI.Controllers;
 
 import BUSINESS.CurrentUser;
 import BUSINESS.create.InsertUser;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class CreateUser {
-    public TextField fullName;
-    public TextField username;
-    public PasswordField password;
-    public PasswordField passwordConfirm;
-    public CheckBox adminCheckbox;
-    public Button submitForm;
-    public Label invalidData;
-    public Label successLabel;
+    @FXML private TextField fullName;
+    @FXML private TextField username;
+    @FXML private PasswordField password;
+    @FXML private PasswordField passwordConfirm;
+    @FXML private CheckBox adminCheckbox;
+    @FXML private Button submitForm;
+    @FXML private Label errorMsg;
+    @FXML private Label successLabel;
 
     public void submitForm() {
-        invalidData.setVisible(false);
+        errorMsg.setText("");
+        successLabel.setText("");
 
         String fullNameText = fullName.getText();
         String usernameText = username.getText();
@@ -23,11 +25,12 @@ public class CreateUser {
         String passwordConfirmText = passwordConfirm.getText();
         int admin = 2;
 
-        if(adminCheckbox.isSelected())
+        if(adminCheckbox.isSelected()) {
             admin = 1;
+        }
 
         try {
-            InsertUser.create(fullNameText, usernameText, passwordText, admin);
+            InsertUser.create(fullNameText, usernameText, passwordText, passwordConfirmText, admin);
             fullName.setText("");
             username.setText("");
             password.setText("");
@@ -35,8 +38,7 @@ public class CreateUser {
             adminCheckbox.setSelected(false);
             successLabel.setText("Успешно Създаване!");
         } catch (Exception e) {
-            invalidData.setVisible(true);
-            invalidData.setText(e.getMessage());
+            errorMsg.setText(e.getMessage());
         }
     }
 }

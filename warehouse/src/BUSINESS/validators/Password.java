@@ -14,7 +14,7 @@ public class Password implements Validator {
 
     @Override
     public boolean validate() throws Exception {
-        if(passwordTooShort() || passwordNumber() || passwordCapitalLetter()) {
+        if(passwordTooShort() || passwordChars()) {
             throw new InvalidPassword();
         }
         if(passwordNotMatchConfirm()) {
@@ -24,18 +24,33 @@ public class Password implements Validator {
     }
 
     private boolean passwordTooShort() {
-        return true;
+        return password.length() < 8;
     }
 
-    private boolean passwordCapitalLetter() {
-        return true;
-    }
+    private boolean passwordChars() {
+        char ch;
+        boolean capitalFlag = false;
+        boolean lowerCaseFlag = false;
+        boolean numberFlag = false;
 
-    private boolean passwordNumber() {
+        for(int i = 0; i < password.length(); i++) {
+            ch = password.charAt(i);
+            if( Character.isDigit(ch)) {
+                numberFlag = true;
+            }
+            else if (Character.isUpperCase(ch)) {
+                capitalFlag = true;
+            } else if (Character.isLowerCase(ch)) {
+                lowerCaseFlag = true;
+            }
+            if(numberFlag && capitalFlag && lowerCaseFlag)
+                return false;
+        }
         return true;
     }
 
     private boolean passwordNotMatchConfirm() {
-        return true;
+        return !password.equals(passwordConfirm);
     }
+
 }

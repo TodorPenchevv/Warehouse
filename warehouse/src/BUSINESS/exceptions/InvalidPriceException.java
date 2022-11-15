@@ -1,7 +1,7 @@
 package BUSINESS.exceptions;
 
 public class InvalidPriceException extends Exception {
-    public InvalidPriceException(double min, double max) {
+    public InvalidPriceException(int min, int max) {
         super("Цената трябва да е между " + min + " и " + max + "!");
     }
 }

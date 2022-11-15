@@ -12,8 +12,12 @@ public class CreateGood {
     @FXML private TextField quantity;
     @FXML private TextField minQuantity;
     @FXML private Label successLabel;
+    @FXML private Label errorMsg;
 
     public void createButtonClicked() {
+        successLabel.setText("");
+        errorMsg.setText("");
+
         String newGood = good.getText();
         int newQuantity = Integer.parseInt(quantity.getText());
         int newMinQuantity = Integer.parseInt(minQuantity.getText());
@@ -28,7 +32,7 @@ public class CreateGood {
             price.setText("");
             successLabel.setText("Успешно Създаване!");
         } catch (Exception e) {
-            e.getMessage();
+            errorMsg.setText(e.getMessage());
         }
     }
 }
