@@ -1,11 +1,8 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
-import BUSINESS.exceptions.GoodAlreadyExistsException;
-import BUSINESS.exceptions.UsernameTakenException;
-import BUSINESS.repository.GoodRepository;
-import BUSINESS.repository.UserRepository;
 import BUSINESS.validators.Password;
+import BUSINESS.validators.Username;
 import ORM.Good;
 import ORM.Role;
 import ORM.User;
@@ -19,12 +16,7 @@ public class InsertUser implements Insert {
 
         //Data validation
         new Password(password, passwordConfirm).validate();
-
-        //Check if username is free
-        List<User> users = UserRepository.findByUsername(username);
-        if (username != null && !users.isEmpty()) {
-            throw new UsernameTakenException();
-        }
+        new Username(username).validate();
 
         //Creating the user object with the data
         //Some sort of data validation before this step...

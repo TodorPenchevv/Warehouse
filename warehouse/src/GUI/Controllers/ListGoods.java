@@ -19,6 +19,7 @@ public class ListGoods implements Initializable {
     @FXML private TableColumn<Good, String> goodColumn;
     @FXML private TableColumn<Good, Double> priceColumn;
     @FXML private TableColumn<Good, Integer> quantityColumn;
+    @FXML private TableColumn<Good, Integer> minQuantityColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -27,6 +28,7 @@ public class ListGoods implements Initializable {
         goodColumn.setCellValueFactory(new PropertyValueFactory<>("good"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        minQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("minQuantity"));
         table.setItems(list);
     }
 }

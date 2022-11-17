@@ -1,5 +1,7 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.CustomException;
+
 public interface Validator {
-    boolean validate() throws Exception;
+    void validate() throws CustomException;
 }

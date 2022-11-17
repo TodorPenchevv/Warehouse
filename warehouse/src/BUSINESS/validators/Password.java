@@ -1,5 +1,6 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.exceptions.InvalidPassword;
 import BUSINESS.exceptions.PasswordsNotMatchException;
 
@@ -13,14 +14,13 @@ public class Password implements Validator {
     }
 
     @Override
-    public boolean validate() throws Exception {
+    public void validate() throws CustomException {
         if(passwordTooShort() || passwordChars()) {
             throw new InvalidPassword();
         }
         if(passwordNotMatchConfirm()) {
             throw new PasswordsNotMatchException();
         }
-        return true;
     }
 
     private boolean passwordTooShort() {

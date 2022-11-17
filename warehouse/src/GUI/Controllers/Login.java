@@ -1,21 +1,26 @@
 package GUI.Controllers;
 
 import BUSINESS.CurrentUser;
+import BUSINESS.create.InsertUser;
 import BUSINESS.repository.UserRepository;
 import GUI.SceneManager;
 import ORM.User;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class Login {
     public TextField username;
     public PasswordField password;
     public Button button;
     public Label errorMsg;
+
 
     public void loginButtonClicked() throws Exception {
         //Find user by username

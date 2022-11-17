@@ -1,6 +1,6 @@
 package BUSINESS.exceptions;
 
-public class RegistryEmptyException extends Exception {
+public class RegistryEmptyException extends CustomException {
     public RegistryEmptyException() {
         super("Няма създадена каса!");
     }

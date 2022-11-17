@@ -1,5 +1,6 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.exceptions.InvalidPriceException;
 import BUSINESS.exceptions.NegativeNumberException;
 
@@ -10,11 +11,10 @@ public class Price implements Validator {
         this.price = price;
     }
 
-    public boolean validate() throws Exception {
+    public void validate() throws CustomException {
         if(negativePrice() || invalidPrice()) {
             throw new InvalidPriceException(0, 100000);
         }
-        return true;
     }
 
     private boolean negativePrice() {

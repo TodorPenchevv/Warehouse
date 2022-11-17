@@ -1,5 +1,6 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.exceptions.InvalidEmailException;
 import BUSINESS.exceptions.PartnerMailExistsException;
 
@@ -10,14 +11,13 @@ public class Email implements Validator {
         this.email = email;
     }
 
-    public boolean validate() throws Exception {
+    public void validate() throws CustomException {
         if(!validFormat()) {
             throw new InvalidEmailException();
         }
         if(!unique()) {
             throw new PartnerMailExistsException();
         }
-        return true;
     }
 
     private boolean validFormat() {

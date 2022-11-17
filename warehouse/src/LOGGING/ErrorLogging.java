@@ -1,0 +1,11 @@
+package LOGGING;
+
+import GUI.AlertBox;
+import org.apache.logging.log4j.Marker;
+
+public class ErrorLogging extends Logging {
+    public void log(Marker marker, String msg) {
+        getLogger().error(marker, msg);
+        AlertBox.display("Грешка", "Възникна неочаквана грешка! Операцията неуспешна!");
+    }
+}

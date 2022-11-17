@@ -43,15 +43,5 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="successLabel" layoutX="29.0" layoutY="350.0" prefHeight="40.0" prefWidth="790.0" textFill="#22da41">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="errorMsg" layoutX="31.0" layoutY="400.0" prefHeight="40.0" prefWidth="790.0" textFill="RED">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

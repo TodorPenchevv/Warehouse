@@ -1,35 +1,35 @@
 package GUI;
 
+import LOGGING.ErrorLogging;
+import BUSINESS.validators.Admin;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 //A class that manages menu loading
 //base on the user choice
 
 public class ViewManager {
+    private static final Marker viewManagerMarker = MarkerManager.getMarker("ViewManager");
+
     //Method loading fxml into AnchorPanes
     public void load(AnchorPane pane, String path) {
         try {
             Parent newFile = FXMLLoader.load(getClass().getResource(path));
             pane.getChildren().setAll(newFile);
         } catch(Exception e) {
-            loadFailed(e);
+            new ErrorLogging().log(viewManagerMarker, e.getMessage());
         }
-    }
-
-    //If loading error exists it should be logged using log4j
-    //for now it is just a console message...
-    private void loadFailed(Exception e) {
-        System.out.println("Error loading the .fxml file...");
-        System.out.println(e.getMessage());
     }
 
     //Based on the row clicked from the treeView
     //we are loading the corresponding view file (fxml)
-    public void chooseView(AnchorPane pane, String option) {
+    public void chooseView(AnchorPane pane, String option) throws Exception {
         switch(option) {
             case "Създаване на Потребител":
+                new Admin().validate();
                 this.load(pane, "views/createUser.fxml");
                 break;
             case "Справка за Потребител":
@@ -54,6 +54,7 @@ public class ViewManager {
                 this.load(pane, "views/listDeals.fxml");
                 break;
             case "Създаване на Каса":
+                new Admin().validate();
                 this.load(pane, "views/createRegister.fxml");
                 break;
             case "Наличност в Каса":

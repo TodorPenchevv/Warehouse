@@ -1,22 +1,30 @@
 package GUI.Controllers;
 
+import BUSINESS.CurrentUser;
+import LOGGING.ErrorLogging;
 import BUSINESS.create.InsertInvoice;
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.GoodRepository;
 import BUSINESS.repository.PartnerRepository;
+import GUI.AlertBox;
 import ORM.Good;
 import ORM.Partner;
+import ORM.Transactions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 
 public class CreateInvoice implements Initializable {
+    private static final Marker createInvoiceMarker = MarkerManager.getMarker("CreateInvoice");
     @FXML private TableView<Good> goodsList;
     @FXML private TableColumn<Good, String> listGood;
     @FXML private TableColumn<Good, Double> listPrice;
@@ -42,6 +50,9 @@ public class CreateInvoice implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //Set one of the radio buttons as selected
+        purchaseRadio.setSelected(true);
+
         //List of all goods
         listGood.setCellValueFactory(new PropertyValueFactory<>("good"));
         listPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -72,27 +83,33 @@ public class CreateInvoice implements Initializable {
     }
 
     public void createButtonClicked() {
-        //Date
-        LocalDate date1 = dateField.getValue();
-        Calendar invoiceDate = new GregorianCalendar(date1.getYear(), date1.getMonthValue()-1, date1.getDayOfMonth());
+        try {
+            //Date
+            LocalDate date1 = dateField.getValue();
+            Calendar invoiceDate = new GregorianCalendar(date1.getYear(), date1.getMonthValue()-1, date1.getDayOfMonth());
+            //User id
+            int userId = CurrentUser.getInstance().getUserId();
 
-        //User id = 1 because we dont have current user at the moment
+            //Transaction Type
+            Transactions transactionName;
+            if (saleRadio.isSelected())
+                transactionName = Transactions.SALE;
+            else
+                transactionName = Transactions.PURCHASE;
 
-        //Transaction Type
-        int transactionID;
-        if (saleRadio.isSelected()) //one radio must be selected
-            transactionID = 1;
-        else
-            transactionID = 2;
+            //Partner
+            Partner partner = partnerField.getSelectionModel().getSelectedItem();
 
-        //Partner
-        Partner partner = partnerField.getSelectionModel().getSelectedItem();
+            //Goods
+            List<Good> goods = addedGoodsList.getItems();
 
-        //Goods
-        List<Good> goods = addedGoodsList.getItems();
-
-        InsertInvoice.create(invoiceDate, goods, 1, partner.getId(), transactionID);
-        successLabel.setText("Успешно Създаване!");
+            InsertInvoice.create(invoiceDate, goods, userId, partner.getId(), transactionName);
+            AlertBox.display("Съобщение", "Успешно Създаване!");
+        } catch (CustomException e) {
+            AlertBox.display("Грешни данни", e.getMessage());
+        } catch (Exception e) {
+            new ErrorLogging().log(createInvoiceMarker, e.getMessage());
+        }
     }
 
     public ObservableList<Good> getGoods() {

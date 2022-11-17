@@ -22,7 +22,7 @@ public class InsertInvoiceGood implements Insert{
 
         double newBalance;
         int newQuantity;
-        if (invoice.getTransaction().getTransaction() == Transactions.PURCHASE){
+        if (invoice.getTransaction().getTransaction().equals(Transactions.PURCHASE)){
             newBalance = register.getBalance() - quantity*price;
             newQuantity = good.getQuantity() + quantity;
         }

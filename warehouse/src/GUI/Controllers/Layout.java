@@ -1,18 +1,29 @@
 package GUI.Controllers;
 
+import BUSINESS.CurrentUser;
+import LOGGING.ErrorLogging;
+import BUSINESS.exceptions.NotAdminException;
 import BUSINESS.tools.Branch;
+import GUI.AlertBox;
+import GUI.SceneManager;
 import GUI.ViewManager;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Layout implements Initializable {
-    public TreeView<String> treeView;
-    public AnchorPane mainPane;
+    private static final Marker layoutMarker = MarkerManager.getMarker("Layout");
+    @FXML private TreeView<String> treeView;
+    @FXML private AnchorPane mainPane;
+    @FXML private Button logoutButton;
 
     private ViewManager viewLoader = new ViewManager();
 
@@ -47,16 +58,30 @@ public class Layout implements Initializable {
         Branch.create("Наличност в Каса", register);
         Branch.create("Списък с Транзакции", register);
         Branch.create("Приходи - Разходи - Печалба", register);
-        
 
         treeView.setShowRoot(false);
         treeView.setRoot(rootItem);
     }
 
     public void selectItems() {
-        TreeItem<String> item = treeView.getSelectionModel().getSelectedItem();
+        try {
+            TreeItem<String> item = treeView.getSelectionModel().getSelectedItem();
 
-        if(item != null)
-            viewLoader.chooseView(mainPane, item.getValue());
+            if(item != null) {
+                viewLoader.chooseView(mainPane, item.getValue());
+            }
+        } catch (NotAdminException e) {
+            AlertBox.display("Достъп", "Нямаш права за този раздел!");
+        } catch (Exception e) {
+            new ErrorLogging().log(layoutMarker, e.getMessage());
+        }
+    }
+
+    public void logout() {
+        //Set the user as logged out
+        CurrentUser.getInstance().logout();
+        //Set the scene to login
+        SceneManager loadScene = new SceneManager();
+        loadScene.loadFromElement(logoutButton, "Вход в системата", "views/login.fxml");
     }
 }

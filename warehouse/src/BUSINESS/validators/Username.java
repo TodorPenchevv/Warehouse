@@ -1,6 +1,11 @@
 package BUSINESS.validators;
 
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.exceptions.UsernameTakenException;
+import BUSINESS.repository.UserRepository;
+import ORM.User;
+
+import java.util.List;
 
 public class Username implements Validator {
     private String username;
@@ -10,14 +15,14 @@ public class Username implements Validator {
     }
 
     @Override
-    public boolean validate() throws Exception {
+    public void validate() throws CustomException {
         if(usernameExists()) {
             throw new UsernameTakenException();
         }
-        return true;
     }
 
     public boolean usernameExists() {
-        return true;
+        List<User> users = UserRepository.findByUsername(username);
+        return (users != null && !users.isEmpty());
     }
 }

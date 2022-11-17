@@ -1,6 +1,6 @@
 package BUSINESS.exceptions;
 
-public class GoodNotFoundException extends Exception {
+public class GoodNotFoundException extends CustomException {
     public GoodNotFoundException(String goodName) {
         super(goodName + " не съществува в списъка със стоки!");
     }

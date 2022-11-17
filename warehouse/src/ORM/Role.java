@@ -41,7 +41,8 @@ public class Role {
         this.users = users;
     }
 
-    public Role(Roles role) {
+    public Role(int id, Roles role) {
+        this.id = id;
         this.role = role;
     }
 

@@ -1,11 +1,14 @@
 package GUI.Controllers;
 
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.GoodRepository;
 import BUSINESS.repository.InvoiceRepository;
 import BUSINESS.repository.PartnerRepository;
 import BUSINESS.repository.UserRepository;
 import BUSINESS.tools.CustomRow;
 import BUSINESS.tools.DateConverter;
+import GUI.AlertBox;
+import LOGGING.ErrorLogging;
 import ORM.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,12 +19,15 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 
 public class UserQuery implements Initializable {
+    private static final Marker userQueryMarker = MarkerManager.getMarker("UserQuery");
 
     @FXML private ComboBox<User> userField;
     @FXML private DatePicker start;
@@ -44,21 +50,26 @@ public class UserQuery implements Initializable {
     }
 
     public void submitButtonClicked() {
+        try {
+            LocalDate startDate = start.getValue();
+            LocalDate endDate = end.getValue();
+
+            List<Invoice> invoices = InvoiceRepository.findByPeriod(startDate, endDate);
+            loadDataIntoTable(invoices);
+        } catch(CustomException e) {
+            AlertBox.display("Грешни данни", e.getMessage());
+        } catch(Exception e) {
+            new ErrorLogging().log(userQueryMarker, e.getMessage());
+        }
+    }
+
+    public void loadDataIntoTable(List<Invoice> invoices) {
         ObservableList<CustomRow> list = FXCollections.observableArrayList();
 
         User user = userField.getSelectionModel().getSelectedItem();
-
-        LocalDate date1 = start.getValue();
-        Calendar startDate = new GregorianCalendar(date1.getYear(), date1.getMonthValue() - 1, date1.getDayOfMonth());
-        LocalDate date2 = end.getValue();
-        Calendar endDate = new GregorianCalendar(date2.getYear(), date2.getMonthValue() - 1, date2.getDayOfMonth());
-
-
         String rowDate, rowTransaction, rowPartnerName, rowDetails;
         double rowTotalPrice = 0;
 
-
-        List<Invoice> invoices = InvoiceRepository.findByPeriod(startDate, endDate);
         for (Invoice invoice : invoices) {
             if (invoice.getUser().getId()==user.getId()) {
                 rowDate = DateConverter.convert(invoice.getCalendar());
@@ -81,6 +92,7 @@ public class UserQuery implements Initializable {
                 System.out.println(invoice.getId() + " ");
             }
         }
+
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         transactionColumn.setCellValueFactory(new PropertyValueFactory<>("transaction"));
         partnerColumn.setCellValueFactory(new PropertyValueFactory<>("partnerName"));

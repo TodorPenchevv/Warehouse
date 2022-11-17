@@ -3,6 +3,7 @@ package BUSINESS.create;
 import BUSINESS.GetSession;
 import BUSINESS.exceptions.GoodAlreadyExistsException;
 import BUSINESS.repository.GoodRepository;
+import BUSINESS.validators.GoodValidator;
 import BUSINESS.validators.Price;
 import BUSINESS.validators.Quantity;
 import ORM.Good;
@@ -18,12 +19,7 @@ public class InsertGood implements Insert{
         new Quantity(quantity).validate();
         new Quantity(minQuantity).validate();
         new Price(price).validate();
-
-        //Good already exists?
-        List<Good> goods = GoodRepository.findByGood(good);
-        if (goods != null && !goods.isEmpty()) {
-            throw new GoodAlreadyExistsException(good);
-        }
+        new GoodValidator(good).validate();
 
         Good newGood = new Good(good, quantity, price, minQuantity);
 
