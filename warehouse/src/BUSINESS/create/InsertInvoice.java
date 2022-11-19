@@ -1,20 +1,38 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
-import BUSINESS.exceptions.NotEnoughQuantityException;
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.validators.Balance;
-import BUSINESS.validators.DateValidator;
 import BUSINESS.validators.GoodQuantity;
+import BUSINESS.validators.DateValidator;
 import ORM.*;
 import org.hibernate.Session;
 
-import java.util.Calendar;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.*;
 
 public class InsertInvoice implements Insert{
-    public static void create(Calendar calendar, List<Good> goods, int userID, int partnerID, Transactions transactionName) throws Exception{
+    public static void create(LocalDate date, List<Good> goods, int userID, int partnerID, Transactions transactionName) throws Exception{
         Session session = GetSession.getSession();
-        Invoice newInvoice = new Invoice(calendar);
+
+        //Find duplicate goods and combine their quantity
+        List<Good> removeGoods = new ArrayList<>();
+        for(Good good1 : goods) {
+            if(good1.getQuantity() == 0) {
+                removeGoods.add(good1);
+                continue;
+            }
+
+            for(Good good2 : goods) {
+                if(!good1.equals(good2) && good1.getGood().equals(good2.getGood())) {
+                    good1.setQuantity(good1.getQuantity() + good2.getQuantity());
+                    good2.setQuantity(0);
+                }
+            }
+        }
+
+        //Remove duplicate rows
+        goods.removeAll(removeGoods);
 
         if(transactionName.equals(Transactions.SALE)) {
             //If we are selling...
@@ -26,7 +44,16 @@ public class InsertInvoice implements Insert{
             //Validate we have enough money
             new Balance(goods).validate();
         }
-        new DateValidator(calendar).validate();
+
+        //Dates are valid
+        new DateValidator(date).validate();
+
+        //Goods list is not empty
+        if(goods.isEmpty())
+            throw new CustomException("Изберете стоки!");
+
+        Calendar invoiceDate = new GregorianCalendar(date.getYear(), date.getMonthValue()-1, date.getDayOfMonth());
+        Invoice newInvoice = new Invoice(invoiceDate);
 
         session.beginTransaction();
 

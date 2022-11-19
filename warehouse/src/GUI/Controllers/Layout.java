@@ -7,20 +7,18 @@ import BUSINESS.tools.Branch;
 import GUI.AlertBox;
 import GUI.SceneManager;
 import GUI.ViewManager;
+import LOGGING.ExceptionToString;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Layout implements Initializable {
-    private static final Marker layoutMarker = MarkerManager.getMarker("Layout");
     @FXML private TreeView<String> treeView;
     @FXML private AnchorPane mainPane;
     @FXML private Button logoutButton;
@@ -73,7 +71,7 @@ public class Layout implements Initializable {
         } catch (NotAdminException e) {
             AlertBox.display("Достъп", "Нямаш права за този раздел!");
         } catch (Exception e) {
-            new ErrorLogging().log(layoutMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 

@@ -13,7 +13,7 @@ public class Price implements Validator {
 
     public void validate() throws CustomException {
         if(negativePrice() || invalidPrice()) {
-            throw new InvalidPriceException(0, 100000);
+            throw new InvalidPriceException(0, 1000000);
         }
     }
 

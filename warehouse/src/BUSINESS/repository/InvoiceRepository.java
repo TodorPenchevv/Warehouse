@@ -2,8 +2,8 @@ package BUSINESS.repository;
 
 import BUSINESS.GetSession;
 import BUSINESS.exceptions.CustomException;
-import BUSINESS.exceptions.InvalidDateException;
-import GUI.AlertBox;
+import BUSINESS.validators.DatesConsecutive;
+import BUSINESS.validators.DateValidator;
 import ORM.Invoice;
 import org.hibernate.Session;
 
@@ -17,22 +17,15 @@ public class InvoiceRepository {
     public static List<Invoice> findByPeriod(LocalDate start, LocalDate end) throws CustomException {
         Session session = GetSession.getSession();
 
-        //TO BE MOVED IN DataValidator --------------------------------
         //Validate LocalDate not null
-        if(start == null || end == null) {
-            throw new InvalidDateException();
-        }
+        new DateValidator(start).validate();
+        new DateValidator(end).validate();
 
         //Check if dates are chronologically correct
-        if(start.isAfter(end)) {
-            LocalDate tempDate = start;
-            start = end;
-            end = tempDate;
-        }
+        new DatesConsecutive(start, end).validate();
 
         Calendar startDate = new GregorianCalendar(start.getYear(), start.getMonthValue() - 1, start.getDayOfMonth());
         Calendar endDate = new GregorianCalendar(end.getYear(), end.getMonthValue() - 1, end.getDayOfMonth());
-        //-------------------------------------------
 
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<Invoice> criteriaQuery = criteriaBuilder.createQuery(Invoice.class);

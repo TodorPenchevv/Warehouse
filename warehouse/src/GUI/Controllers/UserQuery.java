@@ -1,14 +1,13 @@
 package GUI.Controllers;
 
 import BUSINESS.exceptions.CustomException;
-import BUSINESS.repository.GoodRepository;
 import BUSINESS.repository.InvoiceRepository;
-import BUSINESS.repository.PartnerRepository;
 import BUSINESS.repository.UserRepository;
 import BUSINESS.tools.CustomRow;
 import BUSINESS.tools.DateConverter;
 import GUI.AlertBox;
 import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,16 +18,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 
 public class UserQuery implements Initializable {
-    private static final Marker userQueryMarker = MarkerManager.getMarker("UserQuery");
-
     @FXML private ComboBox<User> userField;
     @FXML private DatePicker start;
     @FXML private DatePicker end;
@@ -59,7 +54,7 @@ public class UserQuery implements Initializable {
         } catch(CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
         } catch(Exception e) {
-            new ErrorLogging().log(userQueryMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 
@@ -89,7 +84,6 @@ public class UserQuery implements Initializable {
                         .withTotalPrice(rowTotalPrice).build();
                 list.add(row);
                 rowTotalPrice = 0;
-                System.out.println(invoice.getId() + " ");
             }
         }
 

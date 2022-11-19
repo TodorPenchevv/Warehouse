@@ -3,12 +3,12 @@ package BUSINESS.validators;
 import BUSINESS.exceptions.CustomException;
 import BUSINESS.exceptions.InvalidDateException;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class DateValidator implements Validator {
-    private Calendar date;
+    private LocalDate date;
 
-    public DateValidator(Calendar date) {
+    public DateValidator(LocalDate date) {
         this.date = date;
     }
 
@@ -23,3 +23,4 @@ public class DateValidator implements Validator {
         return date == null;
     }
 }
+

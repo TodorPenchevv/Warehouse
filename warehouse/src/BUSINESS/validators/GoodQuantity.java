@@ -1,6 +1,7 @@
 package BUSINESS.validators;
 
 import BUSINESS.exceptions.CustomException;
+import BUSINESS.exceptions.NegativeNumberException;
 import BUSINESS.exceptions.NotEnoughQuantityException;
 import BUSINESS.repository.GoodRepository;
 import ORM.Good;
@@ -20,7 +21,10 @@ public class GoodQuantity implements Validator{
         for (Good good : this.goods) {
             List<Good> repGood = GoodRepository.findByGood(good.getGood());
             if(repGood.get(0).getQuantity() < good.getQuantity()) {
-                throw new NotEnoughQuantityException(good.getGood());
+                throw new NotEnoughQuantityException(good.getGood(), repGood.get(0).getQuantity());
+            }
+            if(good.getQuantity() <= 0) {
+                throw new NegativeNumberException("Количеството ");
             }
         }
     }

@@ -1,5 +1,7 @@
 package GUI;
 
+import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -34,7 +36,6 @@ public class SceneManager {
     }
 
     public void loadFailed(Exception e) {
-        System.out.println("Error loading new scene...");
-        System.out.println(e.getMessage());
+        new ErrorLogging().log(ExceptionToString.convert(e));
     }
 }

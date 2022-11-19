@@ -2,25 +2,22 @@ package GUI;
 
 import LOGGING.ErrorLogging;
 import BUSINESS.validators.Admin;
+import LOGGING.ExceptionToString;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 //A class that manages menu loading
 //base on the user choice
 
 public class ViewManager {
-    private static final Marker viewManagerMarker = MarkerManager.getMarker("ViewManager");
-
     //Method loading fxml into AnchorPanes
     public void load(AnchorPane pane, String path) {
         try {
             Parent newFile = FXMLLoader.load(getClass().getResource(path));
             pane.getChildren().setAll(newFile);
         } catch(Exception e) {
-            new ErrorLogging().log(viewManagerMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 

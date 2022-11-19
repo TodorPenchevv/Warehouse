@@ -16,7 +16,7 @@ public class Main extends Application{
         new InitializeData();
 
         //Log4j
-        new InfoLogging().log(mainMarker, "Starting the application...");
+        new InfoLogging().log("Starting the application...");
 
         //JavaFX Setup
         SceneManager loadScene = new SceneManager();

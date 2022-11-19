@@ -4,6 +4,7 @@ import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.InvoiceRepository;
 import GUI.AlertBox;
 import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.Invoice;
 import ORM.Invoice_Good;
 import ORM.Transactions;
@@ -19,7 +20,6 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 public class FinancialInfo {
-    private static final Marker financialInfoMarker = MarkerManager.getMarker("financialInfo");
     @FXML private DatePicker start;
     @FXML private DatePicker end;
 
@@ -38,7 +38,7 @@ public class FinancialInfo {
         } catch(CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
         } catch(Exception e) {
-            new ErrorLogging().log(financialInfoMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 
@@ -60,6 +60,9 @@ public class FinancialInfo {
 
         proceedLabel.setText("Приходи: " + String.valueOf(proceeds));
         expenseLabel.setText("Разходи: " + String.valueOf(expenses));
-        profitLabel.setText("Печалба: " + String.valueOf(profit));
+        if(profit < 0)
+            profitLabel.setText("Загуба: " + String.valueOf(-profit));
+        else
+            profitLabel.setText("Печалба: " + String.valueOf(profit));
     }
 }

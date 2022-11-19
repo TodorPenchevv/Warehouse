@@ -1,12 +1,15 @@
 package GUI.Controllers;
 
 import BUSINESS.CurrentUser;
+import BUSINESS.exceptions.NegativeNumberException;
+import BUSINESS.validators.Quantity;
 import LOGGING.ErrorLogging;
 import BUSINESS.create.InsertInvoice;
 import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.GoodRepository;
 import BUSINESS.repository.PartnerRepository;
 import GUI.AlertBox;
+import LOGGING.ExceptionToString;
 import ORM.Good;
 import ORM.Partner;
 import ORM.Transactions;
@@ -16,15 +19,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.*;
 
 public class CreateInvoice implements Initializable {
-    private static final Marker createInvoiceMarker = MarkerManager.getMarker("CreateInvoice");
     @FXML private TableView<Good> goodsList;
     @FXML private TableColumn<Good, String> listGood;
     @FXML private TableColumn<Good, Double> listPrice;
@@ -60,7 +60,7 @@ public class CreateInvoice implements Initializable {
         goodsList.setItems(getGoods());
 
         //List of picked goods
-        addedGoods  = FXCollections.observableArrayList();
+        addedGoods = FXCollections.observableArrayList();
         addedGood.setCellValueFactory(new PropertyValueFactory<>("good"));
         addedPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         addedQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
@@ -70,23 +70,35 @@ public class CreateInvoice implements Initializable {
         totalPrice = 0;
     }
 
-    public void addButtonClicked(){
-        Good good = goodsList.getSelectionModel().getSelectedItem();
-        good.setQuantity(Integer.parseInt(quantityField.getText()));
-        addedGoods.add(good);
-        addedGoodsList.setItems(addedGoods);
-        //shouldn't be able to add the same good more than once
-        //shouldn't be able to add more quantity than is available
-        totalPrice += good.getPrice()*good.getQuantity();
-        totalPriceLabel.setText("Тотална цена: "+totalPrice+"лв.");
-        quantityField.setText("");
+    public void addButtonClicked() {
+        try {
+            Good good = goodsList.getSelectionModel().getSelectedItem();
+
+            //Create new good
+            Good newListGood = new Good();
+            newListGood.setId(good.getId());
+            newListGood.setGood(good.getGood());
+            newListGood.setPrice(good.getPrice());
+            newListGood.setMinQuantity(good.getMinQuantity());
+            newListGood.setQuantity(Integer.parseInt(quantityField.getText()));
+
+            addedGoods.add(newListGood);
+            addedGoodsList.setItems(addedGoods);
+
+            totalPrice += newListGood.getPrice() * newListGood.getQuantity();
+            totalPriceLabel.setText("Тотална цена: " + totalPrice + "лв.");
+
+            quantityField.setText("");
+        } catch (NumberFormatException e) {
+            AlertBox.display("Грешни данни", "Въведете количество за избраната стока!");
+        }
     }
 
     public void createButtonClicked() {
         try {
             //Date
-            LocalDate date1 = dateField.getValue();
-            Calendar invoiceDate = new GregorianCalendar(date1.getYear(), date1.getMonthValue()-1, date1.getDayOfMonth());
+            LocalDate invoiceDate = dateField.getValue();
+
             //User id
             int userId = CurrentUser.getInstance().getUserId();
 
@@ -99,6 +111,8 @@ public class CreateInvoice implements Initializable {
 
             //Partner
             Partner partner = partnerField.getSelectionModel().getSelectedItem();
+            if(partner == null)
+                throw new CustomException("Изберете партньор!");
 
             //Goods
             List<Good> goods = addedGoodsList.getItems();
@@ -108,7 +122,7 @@ public class CreateInvoice implements Initializable {
         } catch (CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
         } catch (Exception e) {
-            new ErrorLogging().log(createInvoiceMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 
@@ -124,5 +138,15 @@ public class CreateInvoice implements Initializable {
         ObservableList<Partner> list = FXCollections.observableArrayList();
         list.addAll(partners);
         partnerField.setItems(list);
+    }
+
+    public void removeFromList() {
+        Good good = addedGoodsList.getSelectionModel().getSelectedItem();
+
+        addedGoods.remove(good);
+        addedGoodsList.setItems(addedGoods);
+
+        totalPrice -= good.getPrice() * good.getQuantity();
+        totalPriceLabel.setText("Тотална цена: " + totalPrice + "лв.");
     }
 }

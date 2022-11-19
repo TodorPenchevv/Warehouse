@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Marker;
 public abstract class Logging {
     private static final Logger logger = LogManager.getLogger(ErrorLogging.class);
 
-    public abstract void log(Marker marker, String msg);
+    public abstract void log(String msg);
 
     public static Logger getLogger() {
         return logger;

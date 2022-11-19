@@ -6,6 +6,7 @@ import BUSINESS.tools.CustomRow;
 import BUSINESS.tools.DateConverter;
 import GUI.AlertBox;
 import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.Invoice;
 import ORM.Invoice_Good;
 import javafx.collections.FXCollections;
@@ -13,14 +14,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.time.LocalDate;
 import java.util.*;
 
 public class ListTransactions {
-    private static final Marker listTransactions = MarkerManager.getMarker("ListTransactions");
     @FXML private DatePicker start;
     @FXML private DatePicker end;
 
@@ -41,7 +39,7 @@ public class ListTransactions {
         } catch (CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
         } catch (Exception e) {
-            new ErrorLogging().log(listTransactions, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 

@@ -5,17 +5,14 @@ import BUSINESS.create.InsertTransaction;
 import BUSINESS.create.InsertUser;
 import BUSINESS.repository.UserRepository;
 import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.Roles;
 import ORM.Transactions;
 import ORM.User;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.util.List;
 
 public class InitializeData {
-    private static final Marker initializeDataMarker = MarkerManager.getMarker("InitializeData");
-
     public InitializeData() {
         List<User> users = UserRepository.findAll();
         if(users == null || users.isEmpty()) {
@@ -39,7 +36,7 @@ public class InitializeData {
         try {
             InsertUser.create("Admin", "admin", "Admin123", "Admin123", 2);
         } catch (Exception e) {
-            new ErrorLogging().log(initializeDataMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 }

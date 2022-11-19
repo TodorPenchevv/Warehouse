@@ -4,9 +4,9 @@ import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.InvoiceRepository;
 import BUSINESS.tools.CustomRow;
 import BUSINESS.tools.DateConverter;
-import BUSINESS.validators.DateValidator;
 import GUI.AlertBox;
 import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,19 +17,13 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ListDeals implements Initializable {
-    private static final Marker listDealsMarker = MarkerManager.getMarker("ListDeals");
-
     @FXML private DatePicker start;
     @FXML private DatePicker end;
     @FXML private RadioButton salesRadio;
@@ -77,7 +71,7 @@ public class ListDeals implements Initializable {
         } catch(CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
         } catch(Exception e) {
-            new ErrorLogging().log(listDealsMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 

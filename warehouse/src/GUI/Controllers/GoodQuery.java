@@ -5,17 +5,15 @@ import BUSINESS.exceptions.GoodNotFoundException;
 import BUSINESS.repository.GoodRepository;
 import GUI.AlertBox;
 import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.Good;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 import java.util.List;
 
 public class GoodQuery {
-    private static final Marker goodQueryMarker = MarkerManager.getMarker("GoodQuery");
     @FXML private Label priceLabel;
     @FXML private Label quantityLabel;
     @FXML private TextField goodField;
@@ -36,7 +34,7 @@ public class GoodQuery {
         } catch (CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
         } catch (Exception e) {
-            new ErrorLogging().log(goodQueryMarker, e.getMessage());
+            new ErrorLogging().log(ExceptionToString.convert(e));
         }
     }
 }
