@@ -29,6 +29,8 @@ public class CreateGood {
             AlertBox.display("Съобщение", "Успешно създаване!");
         } catch (CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());
+        } catch (NumberFormatException e) {
+            AlertBox.display("Грешни данни", "Въведете числа в полетата за цена и стойност!");
         } catch (Exception e) {
             new ErrorLogging().log(ExceptionToString.convert(e));
         }

@@ -1,6 +1,5 @@
 import BUSINESS.InitializeData;
 import GUI.SceneManager;
-import LOGGING.ErrorLogging;
 import LOGGING.InfoLogging;
 import javafx.application.Application;
 import javafx.stage.Stage;

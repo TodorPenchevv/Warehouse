@@ -5,6 +5,7 @@ import BUSINESS.exceptions.CustomException;
 import BUSINESS.validators.Balance;
 import BUSINESS.validators.GoodQuantity;
 import BUSINESS.validators.DateValidator;
+import GUI.AlertBox;
 import ORM.*;
 import org.hibernate.Session;
 
@@ -80,8 +81,15 @@ public class InsertInvoice implements Insert{
 
         session.getTransaction().commit();
 
+
         for (Good good : goods){
             InsertInvoiceGood.create(good.getQuantity(), good.getPrice(), newInvoice.getId(), good.getId(), session);
+        }
+
+        //Balance alert
+        Register register = session.get(Register.class, 1);
+        if(register.getBalance() < 5000) {
+            AlertBox.display("Наличност", "Наличността в касата е под 5000 лв.!");
         }
 
         //Close session after all goods are added

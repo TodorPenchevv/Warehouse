@@ -13,9 +13,9 @@ public class InsertPartner implements Insert {
         Session session = GetSession.getSession();
 
         //Data validation...
-        //new PartnerName(name).validate();
-        //new Email(email).validate();
-        //new PhoneNumber(phone).validate();
+        new PartnerName(name).validate();
+        new Email(email).validate();
+        new PhoneNumber(phone).validate();
 
         Partner newPartner = new Partner(name, phone, email);
 

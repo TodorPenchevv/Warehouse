@@ -1,6 +1,7 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
+import GUI.AlertBox;
 import ORM.*;
 import org.hibernate.Session;
 
@@ -22,6 +23,7 @@ public class InsertInvoiceGood implements Insert{
 
         double newBalance;
         int newQuantity;
+
         if (invoice.getTransaction().getTransaction().equals(Transactions.PURCHASE)){
             newBalance = register.getBalance() - quantity*price;
             newQuantity = good.getQuantity() + quantity;
@@ -29,6 +31,10 @@ public class InsertInvoiceGood implements Insert{
         else{
             newBalance = register.getBalance() + quantity*price;
             newQuantity = good.getQuantity() - quantity;
+
+            if(newQuantity < good.getMinQuantity()) {
+                AlertBox.display("Наличност", "Наличността от " + good.getGood() + " е под " + good.getMinQuantity() + "!");
+            }
         }
 
         register.setBalance(newBalance);

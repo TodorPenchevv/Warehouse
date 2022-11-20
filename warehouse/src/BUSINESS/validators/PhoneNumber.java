@@ -3,6 +3,8 @@ package BUSINESS.validators;
 import BUSINESS.exceptions.CustomException;
 import BUSINESS.exceptions.InvalidPhoneNumberException;
 
+import java.util.regex.Pattern;
+
 public class PhoneNumber implements Validator {
     private String number;
 
@@ -17,6 +19,17 @@ public class PhoneNumber implements Validator {
     }
 
     private boolean validFormat() {
-        return true;
+        String digits = "^\\d{10}$";
+        String format = "(0)?[8-9][7-9][0-9]{7}";
+        return patternMatches(number, digits) && patternMatches(number, format);
+    }
+    //Source:
+    //https://en.wikipedia.org/wiki/Telephone_numbers_in_Bulgaria#Mobile_numbers
+    //https://www.javatpoint.com/mobile-number-validation-in-java
+
+    public static boolean patternMatches(String phoneNumber, String regexPattern) {
+        return Pattern.compile(regexPattern)
+                .matcher(phoneNumber)
+                .matches();
     }
 }

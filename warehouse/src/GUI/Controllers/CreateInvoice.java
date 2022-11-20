@@ -91,6 +91,8 @@ public class CreateInvoice implements Initializable {
             quantityField.setText("");
         } catch (NumberFormatException e) {
             AlertBox.display("Грешни данни", "Въведете количество за избраната стока!");
+        } catch (NullPointerException e) {
+            AlertBox.display("Грешни данни", "Изберете стока!");
         }
     }
 
@@ -117,7 +119,17 @@ public class CreateInvoice implements Initializable {
             //Goods
             List<Good> goods = addedGoodsList.getItems();
 
+            //Creating Invoice
             InsertInvoice.create(invoiceDate, goods, userId, partner.getId(), transactionName);
+
+            //Clear the form
+            partnerField.getSelectionModel().clearSelection();
+            goodsList.setItems(getGoods());
+            addedGoods.clear();
+            dateField.setValue(null);
+            totalPrice = 0;
+            totalPriceLabel.setText("Тотална цена: " + totalPrice);
+
             AlertBox.display("Съобщение", "Успешно Създаване!");
         } catch (CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());

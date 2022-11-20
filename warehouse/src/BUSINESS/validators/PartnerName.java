@@ -1,6 +1,11 @@
 package BUSINESS.validators;
 
 import BUSINESS.exceptions.CustomException;
+import BUSINESS.exceptions.PartnerAlreadyExistsException;
+import BUSINESS.repository.PartnerRepository;
+import ORM.Partner;
+
+import java.util.List;
 
 public class PartnerName implements Validator {
     private String name;
@@ -10,7 +15,13 @@ public class PartnerName implements Validator {
     }
 
     public void validate() throws CustomException {
-        //name validation
-            //if not valid return false
+        if(unique()) {
+            throw new PartnerAlreadyExistsException();
+        }
+    }
+
+    private boolean unique() {
+        List<Partner> partners = PartnerRepository.findByName(name);
+        return !partners.isEmpty();
     }
 }

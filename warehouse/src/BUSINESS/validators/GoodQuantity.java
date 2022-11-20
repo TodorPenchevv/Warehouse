@@ -19,12 +19,13 @@ public class GoodQuantity implements Validator{
     @Override
     public void validate() throws CustomException {
         for (Good good : this.goods) {
+            if(good.getQuantity() <= 0) {
+                throw new NegativeNumberException("Количеството");
+            }
+
             List<Good> repGood = GoodRepository.findByGood(good.getGood());
             if(repGood.get(0).getQuantity() < good.getQuantity()) {
                 throw new NotEnoughQuantityException(good.getGood(), repGood.get(0).getQuantity());
-            }
-            if(good.getQuantity() <= 0) {
-                throw new NegativeNumberException("Количеството ");
             }
         }
     }

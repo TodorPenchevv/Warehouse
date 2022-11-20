@@ -37,4 +37,18 @@ public class PartnerRepository {
         session.close();
         return result;
     }
+
+    public static List<Partner> findByMail(String email) {
+        Session session = GetSession.getSession();
+
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Partner> criteriaQuery = criteriaBuilder.createQuery(Partner.class);
+        Root<Partner> root = criteriaQuery.from(Partner.class);
+        criteriaQuery.where(criteriaBuilder.like(root.get("email"), email));
+
+        List<Partner> result = session.createQuery(criteriaQuery).getResultList();
+
+        session.close();
+        return result;
+    }
 }
