@@ -1,19 +1,22 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
+import BUSINESS.validators.Password;
+import BUSINESS.validators.Username;
+import ORM.Good;
 import ORM.Role;
 import ORM.User;
 import org.hibernate.Session;
 
+import java.util.List;
+
 public class InsertUser implements Insert {
-    public static void create(String name, String username, String password, int roleID) {
+    public static void create(String name, String username, String password, String passwordConfirm, int roleID) throws Exception {
         Session session = GetSession.getSession();
 
-        //Data validation...
-        //Password more than 8 symbols, has numbers, has capital letter...
-        //Passwords match
-        //username is free
-        //...
+        //Data validation
+        new Password(password, passwordConfirm).validate();
+        new Username(username).validate();
 
         //Creating the user object with the data
         //Some sort of data validation before this step...

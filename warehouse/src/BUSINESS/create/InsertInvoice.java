@@ -1,16 +1,60 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
+import BUSINESS.exceptions.CustomException;
+import BUSINESS.validators.Balance;
+import BUSINESS.validators.GoodQuantity;
+import BUSINESS.validators.DateValidator;
+import GUI.AlertBox;
 import ORM.*;
 import org.hibernate.Session;
 
-import java.util.Calendar;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.*;
 
 public class InsertInvoice implements Insert{
-    public static void create(Calendar calendar, List<Good> goods, int userID, int partnerID, int transactionID){
+    public static void create(LocalDate date, List<Good> goods, int userID, int partnerID, Transactions transactionName) throws Exception{
         Session session = GetSession.getSession();
-        Invoice newInvoice = new Invoice(calendar);
+
+        //Find duplicate goods and combine their quantity
+        List<Good> removeGoods = new ArrayList<>();
+        for(Good good1 : goods) {
+            if(good1.getQuantity() == 0) {
+                removeGoods.add(good1);
+                continue;
+            }
+
+            for(Good good2 : goods) {
+                if(!good1.equals(good2) && good1.getGood().equals(good2.getGood())) {
+                    good1.setQuantity(good1.getQuantity() + good2.getQuantity());
+                    good2.setQuantity(0);
+                }
+            }
+        }
+
+        //Remove duplicate rows
+        goods.removeAll(removeGoods);
+
+        if(transactionName.equals(Transactions.SALE)) {
+            //If we are selling...
+            //Validate goods quantity is enough
+            new GoodQuantity(goods).validate();
+        }
+        else {
+            //If we are buying...
+            //Validate we have enough money
+            new Balance(goods).validate();
+        }
+
+        //Dates are valid
+        new DateValidator(date).validate();
+
+        //Goods list is not empty
+        if(goods.isEmpty())
+            throw new CustomException("Изберете стоки!");
+
+        Calendar invoiceDate = new GregorianCalendar(date.getYear(), date.getMonthValue()-1, date.getDayOfMonth());
+        Invoice newInvoice = new Invoice(invoiceDate);
 
         session.beginTransaction();
 
@@ -22,7 +66,11 @@ public class InsertInvoice implements Insert{
         partner.getInvoices().add(newInvoice);
         newInvoice.setPartner(partner);
 
-        Transaction transaction = session.get(Transaction.class, transactionID);
+        int transactionId = 1;
+        if(transactionName.equals(Transactions.PURCHASE))
+              transactionId = 2;
+
+        Transaction transaction = session.get(Transaction.class, transactionId);
         user.getInvoices().add(newInvoice);
         newInvoice.setTransaction(transaction);
 
@@ -36,6 +84,12 @@ public class InsertInvoice implements Insert{
 
         for (Good good : goods){
             InsertInvoiceGood.create(good.getQuantity(), good.getPrice(), newInvoice.getId(), good.getId(), session);
+        }
+
+        //Balance alert
+        Register register = session.get(Register.class, 1);
+        if(register.getBalance() < 5000) {
+            AlertBox.display("Наличност", "Наличността в касата е под 5000 лв.!");
         }
 
         //Close session after all goods are added

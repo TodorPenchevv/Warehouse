@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateInvoice">
+<AnchorPane prefHeight="800.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CreateInvoice">
     <children>
         <Label layoutX="29.0" layoutY="26.0" text="Създаване на Фактура">
             <font>
@@ -65,7 +65,7 @@
       </HBox>
         <VBox layoutX="300.0" layoutY="102.0" prefHeight="698.0" prefWidth="761.0" spacing="15.0">
             <children>
-                <TableView fx:id="addedGoodsList" prefHeight="618.0" prefWidth="416.0">
+                <TableView fx:id="addedGoodsList" prefHeight="618.0" prefWidth="711.0">
                     <columns>
                         <TableColumn fx:id="addedGood" prefWidth="75.0" text="Стока" />
                         <TableColumn fx:id="addedPrice" prefWidth="75.0" text="Цена" />
@@ -77,13 +77,18 @@
                 </TableView>
                 <HBox alignment="CENTER" spacing="25.0">
                     <children>
-                  <DatePicker fx:id="dateField" prefHeight="31.0" prefWidth="268.0" promptText="Дата" />
-                        <Label fx:id="totalPriceLabel" alignment="CENTER" prefHeight="25.0" prefWidth="347.0" text="Тотална цена: 0">
+                  <Button fx:id="removeButton" onAction="#removeFromList" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Изтрий">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <DatePicker fx:id="dateField" prefHeight="31.0" prefWidth="178.0" promptText="Дата" />
+                        <Label fx:id="totalPriceLabel" alignment="CENTER" prefHeight="25.0" prefWidth="290.0" text="Тотална цена: 0">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#createButtonClicked" prefHeight="35.0" prefWidth="287.0" text="Създай">
+                        <Button mnemonicParsing="false" onAction="#createButtonClicked" prefHeight="35.0" prefWidth="97.0" text="Създай">
                             <font>
                                 <Font size="16.0" />
                             </font>

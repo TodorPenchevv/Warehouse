@@ -6,10 +6,10 @@ import ORM.Transactions;
 import org.hibernate.Session;
 
 public class InsertTransaction implements Insert{
-    public static void create(Transactions transaction) {
+    public static void create(int id, Transactions transaction) {
         Session session = GetSession.getSession();
 
-        Transaction newTransaction = new Transaction(transaction);
+        Transaction newTransaction = new Transaction(id, transaction);
 
         session.beginTransaction();
         session.save(newTransaction);

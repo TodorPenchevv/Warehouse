@@ -1,15 +1,22 @@
 package BUSINESS.validators;
 
-public class Quantity implements Validator {
-    private String quantity;
+import BUSINESS.exceptions.CustomException;
+import BUSINESS.exceptions.NegativeNumberException;
 
-    public Quantity(String quantity) {
+public class Quantity implements Validator {
+    private int quantity;
+
+    public Quantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public boolean validate() {
-        //quantity validation
-            //if not valid return false
-        return true;
+    public void validate() throws CustomException {
+        if(negativeQuantity()) {
+            throw new NegativeNumberException("Количеството");
+        }
+    }
+
+    private boolean negativeQuantity() {
+        return quantity < 0;
     }
 }

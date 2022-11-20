@@ -41,7 +41,8 @@ public class Transaction {
         this.invoices = invoices;
     }
 
-    public Transaction(Transactions transaction) {
+    public Transaction(int id, Transactions transaction) {
+        this.id = id;
         this.transaction = transaction;
     }
 

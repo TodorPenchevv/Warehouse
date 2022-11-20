@@ -1,6 +1,10 @@
 package GUI.Controllers;
 
+import LOGGING.ErrorLogging;
 import BUSINESS.create.InsertPartner;
+import BUSINESS.exceptions.CustomException;
+import GUI.AlertBox;
+import LOGGING.ExceptionToString;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -8,17 +12,22 @@ public class CreatePartner {
     @FXML private TextField partnerName;
     @FXML private TextField email;
     @FXML private TextField phone;
-    @FXML private Label successLabel;
-   // @FXML private Label invalidData;
 
     public void submitButtonClicked() {
-        String newPartnerName = partnerName.getText();
-        String newPhone = phone.getText();
-        String newEmail = email.getText();
+        try {
+            String newPartnerName = partnerName.getText();
+            String newPhone = phone.getText();
+            String newEmail = email.getText();
 
-        //validation
-
-        InsertPartner.create(newPartnerName, newPhone, newEmail);
-        successLabel.setText("Успешно Създаване!");
+            InsertPartner.create(newPartnerName, newPhone, newEmail);
+            partnerName.setText("");
+            email.setText("");
+            phone.setText("");
+            AlertBox.display("Съобщение", "Успешно създаване!");
+        } catch (CustomException e) {
+            AlertBox.display("Грешни данни", e.getMessage());
+        } catch (Exception e) {
+            new ErrorLogging().log(ExceptionToString.convert(e));
+        }
     }
 }

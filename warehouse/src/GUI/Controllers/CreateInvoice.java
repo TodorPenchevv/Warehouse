@@ -1,10 +1,18 @@
 package GUI.Controllers;
 
+import BUSINESS.CurrentUser;
+import BUSINESS.exceptions.NegativeNumberException;
+import BUSINESS.validators.Quantity;
+import LOGGING.ErrorLogging;
 import BUSINESS.create.InsertInvoice;
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.GoodRepository;
 import BUSINESS.repository.PartnerRepository;
+import GUI.AlertBox;
+import LOGGING.ExceptionToString;
 import ORM.Good;
 import ORM.Partner;
+import ORM.Transactions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -42,6 +50,9 @@ public class CreateInvoice implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //Set one of the radio buttons as selected
+        purchaseRadio.setSelected(true);
+
         //List of all goods
         listGood.setCellValueFactory(new PropertyValueFactory<>("good"));
         listPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -49,7 +60,7 @@ public class CreateInvoice implements Initializable {
         goodsList.setItems(getGoods());
 
         //List of picked goods
-        addedGoods  = FXCollections.observableArrayList();
+        addedGoods = FXCollections.observableArrayList();
         addedGood.setCellValueFactory(new PropertyValueFactory<>("good"));
         addedPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         addedQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
@@ -59,39 +70,72 @@ public class CreateInvoice implements Initializable {
         totalPrice = 0;
     }
 
-    public void addButtonClicked(){
-        Good good = goodsList.getSelectionModel().getSelectedItem();
-        good.setQuantity(Integer.parseInt(quantityField.getText()));
-        addedGoods.add(good);
-        addedGoodsList.setItems(addedGoods);
-        //shouldn't be able to add the same good more than once
-        //shouldn't be able to add more quantity than is available
-        totalPrice += good.getPrice()*good.getQuantity();
-        totalPriceLabel.setText("Тотална цена: "+totalPrice+"лв.");
+    public void addButtonClicked() {
+        try {
+            Good good = goodsList.getSelectionModel().getSelectedItem();
+
+            //Create new good
+            Good newListGood = new Good();
+            newListGood.setId(good.getId());
+            newListGood.setGood(good.getGood());
+            newListGood.setPrice(good.getPrice());
+            newListGood.setMinQuantity(good.getMinQuantity());
+            newListGood.setQuantity(Integer.parseInt(quantityField.getText()));
+
+            addedGoods.add(newListGood);
+            addedGoodsList.setItems(addedGoods);
+
+            totalPrice += newListGood.getPrice() * newListGood.getQuantity();
+            totalPriceLabel.setText("Тотална цена: " + totalPrice + "лв.");
+
+            quantityField.setText("");
+        } catch (NumberFormatException e) {
+            AlertBox.display("Грешни данни", "Въведете количество за избраната стока!");
+        } catch (NullPointerException e) {
+            AlertBox.display("Грешни данни", "Изберете стока!");
+        }
     }
 
     public void createButtonClicked() {
-        //Date
-        LocalDate date1 = dateField.getValue();
-        Calendar invoiceDate = new GregorianCalendar(date1.getYear(), date1.getMonthValue()-1, date1.getDayOfMonth());
+        try {
+            //Date
+            LocalDate invoiceDate = dateField.getValue();
 
-        //User id = 1 because we dont have current user at the moment
+            //User id
+            int userId = CurrentUser.getInstance().getUserId();
 
-        //Transaction Type
-        int transactionID;
-        if (saleRadio.isSelected()) //one radio must be selected
-            transactionID = 1;
-        else
-            transactionID = 2;
+            //Transaction Type
+            Transactions transactionName;
+            if (saleRadio.isSelected())
+                transactionName = Transactions.SALE;
+            else
+                transactionName = Transactions.PURCHASE;
 
-        //Partner
-        Partner partner = partnerField.getSelectionModel().getSelectedItem();
+            //Partner
+            Partner partner = partnerField.getSelectionModel().getSelectedItem();
+            if(partner == null)
+                throw new CustomException("Изберете партньор!");
 
-        //Goods
-        List<Good> goods = addedGoodsList.getItems();
+            //Goods
+            List<Good> goods = addedGoodsList.getItems();
 
-        InsertInvoice.create(invoiceDate, goods, 1, partner.getId(), transactionID);
-        successLabel.setText("Успешно Създаване!");
+            //Creating Invoice
+            InsertInvoice.create(invoiceDate, goods, userId, partner.getId(), transactionName);
+
+            //Clear the form
+            partnerField.getSelectionModel().clearSelection();
+            goodsList.setItems(getGoods());
+            addedGoods.clear();
+            dateField.setValue(null);
+            totalPrice = 0;
+            totalPriceLabel.setText("Тотална цена: " + totalPrice);
+
+            AlertBox.display("Съобщение", "Успешно Създаване!");
+        } catch (CustomException e) {
+            AlertBox.display("Грешни данни", e.getMessage());
+        } catch (Exception e) {
+            new ErrorLogging().log(ExceptionToString.convert(e));
+        }
     }
 
     public ObservableList<Good> getGoods() {
@@ -106,5 +150,15 @@ public class CreateInvoice implements Initializable {
         ObservableList<Partner> list = FXCollections.observableArrayList();
         list.addAll(partners);
         partnerField.setItems(list);
+    }
+
+    public void removeFromList() {
+        Good good = addedGoodsList.getSelectionModel().getSelectedItem();
+
+        addedGoods.remove(good);
+        addedGoodsList.setItems(addedGoods);
+
+        totalPrice -= good.getPrice() * good.getQuantity();
+        totalPriceLabel.setText("Тотална цена: " + totalPrice + "лв.");
     }
 }

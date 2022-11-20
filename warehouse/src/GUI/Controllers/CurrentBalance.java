@@ -1,6 +1,9 @@
 package GUI.Controllers;
 
 import BUSINESS.GetSession;
+import GUI.AlertBox;
+import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.Register;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +17,18 @@ public class CurrentBalance implements Initializable {
 
    @Override
    public void initialize(URL location, ResourceBundle resources) {
-      double currentBalance = GetSession.getSession().get(Register.class, 1).getBalance();
-      balance.setText(String.valueOf(currentBalance));
+      try {
+         Register register = GetSession.getSession().get(Register.class, 1);
+
+         if(register == null) {
+            AlertBox.display("Каса", "Касата е все още празна");
+            return;
+         }
+
+         double currentBalance = register.getBalance();
+         balance.setText(String.valueOf(currentBalance));
+      } catch (Exception e) {
+         new ErrorLogging().log(ExceptionToString.convert(e));
+      }
    }
 }

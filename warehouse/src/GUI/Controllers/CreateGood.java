@@ -1,27 +1,38 @@
 package GUI.Controllers;
 
+import LOGGING.ErrorLogging;
 import BUSINESS.create.InsertGood;
+import BUSINESS.exceptions.CustomException;
+import GUI.AlertBox;
+import LOGGING.ExceptionToString;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
 
 public class CreateGood {
     @FXML private TextField good;
     @FXML private TextField price;
     @FXML private TextField quantity;
     @FXML private TextField minQuantity;
-    @FXML private Label successLabel;
 
-    public void createButtonClicked(){
-        String newGood = good.getText();
-        int newQuantity = Integer.parseInt(quantity.getText());
-        int newMinQuantity = Integer.parseInt(minQuantity.getText());
-        double newPrice = Double.parseDouble(price.getText());
+    public void createButtonClicked() {
+        try {
+            String newGood = good.getText();
+            int newQuantity = Integer.parseInt(quantity.getText());
+            int newMinQuantity = Integer.parseInt(minQuantity.getText());
+            double newPrice = Double.parseDouble(price.getText());
 
-        //validation
-
-        InsertGood.create(newGood, newQuantity, newPrice, newMinQuantity);
-        successLabel.setText("Успешно Създаване!");
+            InsertGood.create(newGood, newQuantity, newPrice, newMinQuantity);
+            good.setText("");
+            quantity.setText("");
+            minQuantity.setText("");
+            price.setText("");
+            AlertBox.display("Съобщение", "Успешно създаване!");
+        } catch (CustomException e) {
+            AlertBox.display("Грешни данни", e.getMessage());
+        } catch (NumberFormatException e) {
+            AlertBox.display("Грешни данни", "Въведете числа в полетата за цена и стойност!");
+        } catch (Exception e) {
+            new ErrorLogging().log(ExceptionToString.convert(e));
+        }
     }
 }

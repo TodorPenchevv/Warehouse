@@ -17,6 +17,7 @@ public class Login {
     public Button button;
     public Label errorMsg;
 
+
     public void loginButtonClicked() throws Exception {
         //Find user by username
         List<User> users = UserRepository.findByUsername(username.getText());

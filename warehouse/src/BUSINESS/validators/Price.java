@@ -1,15 +1,27 @@
 package BUSINESS.validators;
 
-public class Price implements Validator {
-    private String price;
+import BUSINESS.exceptions.CustomException;
+import BUSINESS.exceptions.InvalidPriceException;
+import BUSINESS.exceptions.NegativeNumberException;
 
-    public Price(String price) {
+public class Price implements Validator {
+    private double price;
+
+    public Price(double price) {
         this.price = price;
     }
 
-    public boolean validate() {
-        //price validation
-            //if not valid return false
-        return true;
+    public void validate() throws CustomException {
+        if(negativePrice() || invalidPrice()) {
+            throw new InvalidPriceException(0, 1000000);
+        }
+    }
+
+    private boolean negativePrice() {
+        return price < 0;
+    }
+
+    private boolean invalidPrice() {
+        return price > 100000;
     }
 }

@@ -1,8 +1,12 @@
 package GUI.Controllers;
 
+import BUSINESS.exceptions.CustomException;
 import BUSINESS.repository.InvoiceRepository;
 import BUSINESS.tools.CustomRow;
 import BUSINESS.tools.DateConverter;
+import GUI.AlertBox;
+import LOGGING.ErrorLogging;
+import LOGGING.ExceptionToString;
 import ORM.Invoice;
 import ORM.Invoice_Good;
 import javafx.collections.FXCollections;
@@ -26,17 +30,23 @@ public class ListTransactions {
     @FXML private TableColumn<CustomRow, String> priceColumn;
 
     public void submitButtonClicked(){
-        LocalDate date1 = start.getValue();
-        Calendar calendar1 = new GregorianCalendar(date1.getYear(), date1.getMonthValue()-1, date1.getDayOfMonth());
-        LocalDate date2 = end.getValue();
-        Calendar calendar2 = new GregorianCalendar(date2.getYear(), date2.getMonthValue()-1, date2.getDayOfMonth());
+        try {
+            LocalDate startDate = start.getValue();
+            LocalDate endDate = end.getValue();
 
+            List<Invoice> invoices = InvoiceRepository.findByPeriod(startDate, endDate);
+            loadDataIntoTable(invoices);
+        } catch (CustomException e) {
+            AlertBox.display("Грешни данни", e.getMessage());
+        } catch (Exception e) {
+            new ErrorLogging().log(ExceptionToString.convert(e));
+        }
+    }
+
+    public void loadDataIntoTable(List<Invoice> invoices) {
         ObservableList<CustomRow> list  = FXCollections.observableArrayList();
-
-        List<Invoice> invoices = InvoiceRepository.findByPeriod(calendar1, calendar2);
         String rowTransaction, rowPartnerName, rowUserName, rowDate;
         double rowTotalPrice = 0;
-
 
         for (Invoice invoice : invoices){
             rowTransaction = invoice.getTransaction().getTransaction().toString();
@@ -45,9 +55,8 @@ public class ListTransactions {
             rowDate = DateConverter.convert(invoice.getCalendar());
 
             for (Invoice_Good ig : invoice.getInvoice_goods()) {
-                 rowTotalPrice += ig.getPrice() * ig.getQuantity();
+                rowTotalPrice += ig.getPrice() * ig.getQuantity();
             }
-
 
             CustomRow row = new CustomRow.Builder()
                     .withTransaction(rowTransaction)
@@ -65,9 +74,6 @@ public class ListTransactions {
         userColumn.setCellValueFactory(new PropertyValueFactory<>("userName"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
 
-
         table.setItems(list);
     }
-
-
 }
