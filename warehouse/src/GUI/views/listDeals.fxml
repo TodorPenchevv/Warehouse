@@ -61,7 +61,7 @@
                   <TableColumn fx:id="dateColumn" text="Дата" />
                   <TableColumn fx:id="userColumn" text="Потребител" />
                   <TableColumn fx:id="partnerColumn" text="Партньор" />
-                  <TableColumn fx:id="priceColumn" text="Сума" />
+                  <TableColumn fx:id="priceColumn" text="Сума (лв.)" />
                   <TableColumn fx:id="detailColumn" text="Детайли" />
                </columns>
                <columnResizePolicy>

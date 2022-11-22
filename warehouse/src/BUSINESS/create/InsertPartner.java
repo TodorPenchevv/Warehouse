@@ -8,7 +8,7 @@ import BUSINESS.validators.PhoneNumber;
 import ORM.Partner;
 import org.hibernate.Session;
 
-public class InsertPartner implements Insert {
+public class InsertPartner {
     public static void create(String name, String phone, String email) throws CustomException {
         Session session = GetSession.getSession();
 

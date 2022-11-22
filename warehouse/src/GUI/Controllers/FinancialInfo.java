@@ -58,11 +58,11 @@ public class FinancialInfo {
 
         profit = proceeds - expenses;
 
-        proceedLabel.setText("Приходи: " + String.valueOf(proceeds));
-        expenseLabel.setText("Разходи: " + String.valueOf(expenses));
+        proceedLabel.setText("Приходи: " + String.valueOf(proceeds)+"лв.");
+        expenseLabel.setText("Разходи: " + String.valueOf(expenses)+"лв.");
         if(profit < 0)
-            profitLabel.setText("Загуба: " + String.valueOf(-profit));
+            profitLabel.setText("Загуба: " + String.valueOf(-profit)+"лв.");
         else
-            profitLabel.setText("Печалба: " + String.valueOf(profit));
+            profitLabel.setText("Печалба: " + String.valueOf(profit)+"лв.");
     }
 }

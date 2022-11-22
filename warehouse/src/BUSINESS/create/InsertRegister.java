@@ -8,7 +8,7 @@ import BUSINESS.validators.Price;
 import ORM.Register;
 import org.hibernate.Session;
 
-public class InsertRegister implements Insert{
+public class InsertRegister {
     public static void create(int id, double balance) throws CustomException {
         Session session = GetSession.getSession();
 

@@ -13,7 +13,7 @@ public class SceneManager {
         try {
             Parent mainLayout = FXMLLoader.load(getClass().getResource(scenePath));
             stage.setTitle(title);
-            stage.setScene(new Scene(mainLayout, 1280, 800));
+            stage.setScene(new Scene(mainLayout, 1330, 800));
             stage.show();
         } catch (Exception e) {
             loadFailed(e);
@@ -28,7 +28,7 @@ public class SceneManager {
             //Get current stage
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setTitle(title);
-            stage.setScene(new Scene(mainLayout, 1280, 800));
+            stage.setScene(new Scene(mainLayout, 1330, 800));
             stage.show();
         } catch (Exception e) {
             loadFailed(e);

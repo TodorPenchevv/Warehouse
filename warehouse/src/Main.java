@@ -1,3 +1,4 @@
+import BUSINESS.GetSession;
 import BUSINESS.InitializeData;
 import GUI.SceneManager;
 import LOGGING.InfoLogging;
@@ -5,6 +6,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
+import org.hibernate.Session;
 
 public class Main extends Application{
     private static final Marker mainMarker = MarkerManager.getMarker("Main");

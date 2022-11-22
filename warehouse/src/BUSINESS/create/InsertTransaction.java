@@ -5,7 +5,7 @@ import ORM.Transaction;
 import ORM.Transactions;
 import org.hibernate.Session;
 
-public class InsertTransaction implements Insert{
+public class InsertTransaction {
     public static void create(int id, Transactions transaction) {
         Session session = GetSession.getSession();
 

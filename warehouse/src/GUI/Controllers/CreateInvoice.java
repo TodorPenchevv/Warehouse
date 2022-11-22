@@ -43,7 +43,6 @@ public class CreateInvoice implements Initializable {
     @FXML private RadioButton purchaseRadio;
 
     @FXML private Label totalPriceLabel;
-    @FXML private Label successLabel;
 
     private ObservableList<Good> addedGoods;
     private double totalPrice;

@@ -26,7 +26,7 @@ public class CurrentBalance implements Initializable {
          }
 
          double currentBalance = register.getBalance();
-         balance.setText(String.valueOf(currentBalance));
+         balance.setText(String.valueOf(currentBalance)+"лв.");
       } catch (Exception e) {
          new ErrorLogging().log(ExceptionToString.convert(e));
       }

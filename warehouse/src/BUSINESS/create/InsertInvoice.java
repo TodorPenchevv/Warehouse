@@ -12,7 +12,7 @@ import org.hibernate.Session;
 import java.time.LocalDate;
 import java.util.*;
 
-public class InsertInvoice implements Insert{
+public class InsertInvoice {
     public static void create(LocalDate date, List<Good> goods, int userID, int partnerID, Transactions transactionName) throws Exception{
         Session session = GetSession.getSession();
 

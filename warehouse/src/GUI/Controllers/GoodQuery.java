@@ -29,7 +29,7 @@ public class GoodQuery {
             String price = String.valueOf(goods.get(0).getPrice());
             String quantity = String.valueOf(goods.get(0).getQuantity());
 
-            priceLabel.setText("Цена: " + price);
+            priceLabel.setText("Цена: " + price+"лв.");
             quantityLabel.setText("Количество: " + quantity);
         } catch (CustomException e) {
             AlertBox.display("Грешни данни", e.getMessage());

@@ -1,11 +1,10 @@
 package BUSINESS.create;
 
-import BUSINESS.GetSession;
 import GUI.AlertBox;
 import ORM.*;
 import org.hibernate.Session;
 
-public class InsertInvoiceGood implements Insert{
+public class InsertInvoiceGood {
     public static void create(int quantity, double price, int invoiceID, int goodID, Session session) {
         Invoice_Good newInvoiceGood = new Invoice_Good(quantity, price);
 

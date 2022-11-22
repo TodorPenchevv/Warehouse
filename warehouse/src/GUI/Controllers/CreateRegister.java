@@ -12,14 +12,13 @@ import javafx.scene.control.TextField;
 //only 1 register
 public class CreateRegister {
     @FXML private TextField balance;
-    @FXML private Label successLabel;
 
     public void createButtonClicked(){
         try {
             double newBalance = Double.parseDouble(balance.getText());
 
             InsertRegister.create(1, newBalance);
-            successLabel.setText("Успешно Създаване!");
+            AlertBox.display("Съобщение", "Успешно създаване!");
         } catch (CustomException e) {
             AlertBox.display("Грешка", e.getMessage());
         } catch (Exception e) {

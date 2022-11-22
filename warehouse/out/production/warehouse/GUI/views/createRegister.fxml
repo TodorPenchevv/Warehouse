@@ -26,11 +26,6 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Label fx:id="successLabel">
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font>
-            </Label>
          </children>
       </VBox>
    </children>

@@ -149,7 +149,7 @@ public class CustomRow {
     public static String processDetails(List<Invoice_Good> list){
         StringBuilder builder = new StringBuilder();
         for (Invoice_Good ig : list)
-            builder.append(ig.getQuantity()).append("x ").append(ig.getGood().getGood()).append(", ").append(ig.getPrice()).append("лв. \n");
+            builder.append(ig.getQuantity()).append("x ").append(ig.getGood().getGood()).append(", ").append(ig.getPrice()).append("лв.\n");
         return builder.toString();
     }
 }

@@ -1,17 +1,13 @@
 package BUSINESS.create;
 
 import BUSINESS.GetSession;
-import BUSINESS.exceptions.GoodAlreadyExistsException;
-import BUSINESS.repository.GoodRepository;
 import BUSINESS.validators.GoodValidator;
 import BUSINESS.validators.Price;
 import BUSINESS.validators.Quantity;
 import ORM.Good;
 import org.hibernate.Session;
 
-import java.util.List;
-
-public class InsertGood implements Insert{
+public class InsertGood {
     public static void create(String good, int quantity, double price, int minQuantity) throws Exception {
         Session session = GetSession.getSession();
 

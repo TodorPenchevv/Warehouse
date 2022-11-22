@@ -8,8 +8,6 @@ import java.util.List;
 @Table(name = "ROLES")
 public class Role {
     @Id
-    @GeneratedValue(generator = "role_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "role_seq",sequenceName = "role_seq",initialValue = 1,allocationSize = 1)
     private int id;
     @Enumerated(EnumType.STRING)
     private Roles role;

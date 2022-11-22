@@ -20,7 +20,7 @@
                 <TableView fx:id="table" prefHeight="716.0" prefWidth="1030.0">
                     <columns>
                         <TableColumn fx:id="goodColumn" text="Стока" />
-                        <TableColumn fx:id="priceColumn" text="Цена" />
+                        <TableColumn fx:id="priceColumn" text="Цена (лв.)" />
                         <TableColumn fx:id="quantityColumn" text="Количество" />
                         <TableColumn fx:id="minQuantityColumn" text="Мин. Количество" />
                     </columns>
