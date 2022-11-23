@@ -43,7 +43,7 @@
                 <TableColumn fx:id="transactionColumn" text="Тип" />
                   <TableColumn fx:id="partnerColumn" text="Партньор" />
                   <TableColumn fx:id="userColumn" text="Служител" />
-                  <TableColumn fx:id="priceColumn" text="Сума" />
+                  <TableColumn fx:id="priceColumn" text="Сума (лв.)" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

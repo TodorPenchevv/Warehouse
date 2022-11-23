@@ -16,7 +16,7 @@
       </Label>
       <VBox layoutX="31.0" layoutY="97.0" prefHeight="315.0" prefWidth="300.0" spacing="15.0">
          <children>
-            <TextField fx:id="balance" promptText="Начална Сума в Касата">
+            <TextField fx:id="balance" promptText="Начална Сума в Касата Цена (лв.)">
                <font>
                   <Font size="16.0" />
                </font>
