@@ -22,6 +22,9 @@ public class Main extends Application{
         //JavaFX Setup
         SceneManager loadScene = new SceneManager();
         loadScene.load(primaryStage, "Вход в системата", "views/login.fxml");
+
+
+        new InitializeData();
     }
 
     public static void main(String[] args) {

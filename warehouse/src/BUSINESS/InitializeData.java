@@ -9,6 +9,7 @@ import LOGGING.ExceptionToString;
 import ORM.Roles;
 import ORM.Transactions;
 import ORM.User;
+import org.hibernate.Session;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class InitializeData {
     public InitializeData() {
         List<User> users = UserRepository.findAll();
         if(users == null || users.isEmpty()) {
+            initializeConnection();
             initializeRoles();
             initializeTransactions();
             initializeAdmin();
@@ -38,5 +40,12 @@ public class InitializeData {
         } catch (Exception e) {
             new ErrorLogging().log(ExceptionToString.convert(e));
         }
+    }
+
+    private void initializeConnection(){
+        Session session = GetSession.getSession();
+        session.beginTransaction();
+        session.getTransaction().commit();
+        session.close();
     }
 }

@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/tools/CustomRow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/BUSINESS/tools/CustomRow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/CreateInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/FinancialInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/FinancialInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/GoodQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/Controllers/GoodQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createGood.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createGood.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createInvoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createInvoice.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/createRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listDeals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listDeals.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listGoods.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listGoods.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listTransactions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/warehouse/GUI/views/listTransactions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUSINESS/InitializeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUSINESS/InitializeData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
