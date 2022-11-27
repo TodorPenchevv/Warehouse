@@ -1,58 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/Warehouse.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/DropAll.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche.dmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/ChangeRequests.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/businessinfo/Business Information.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/businessinfo/Objects.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/DDLSelection.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/DataTypes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/Diagrams.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/Objects.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/structuredtype/seg_0/47E390DE-0671-C4B1-8428-0F45CBEE18F8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/structuredtype/seg_0/F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/datatypes/subviews/3BF856F3-82FB-7F66-7738-6A4064A32F9D.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/dl_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/dmd_open.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/logical/Diagrams.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/logical/Logical.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/logical/Objects.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/logical/entity/seg_0/014165C9-0A01-B3FC-B37F-57ACD852A704.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/logical/subviews/F2FE6FF8-7754-CF77-A2E7-6A07D56790E1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/mapping/DeletedMap_RM52AB9FBB-573B-AEE6-20E4-939FC1D532AE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/mapping/ExtendedMap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/mapping/ExtendedMap_RM52AB9FBB-573B-AEE6-20E4-939FC1D532AE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/pm/Objects.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/pm/Process Model.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rdbms/modelche_RDBMSSites.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/DDLSelection.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/Diagrams.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/Objects.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/foreignkey/seg_0/050BECF5-EFDF-8F2B-E46F-0536B9A34A17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/foreignkey/seg_0/52E98D67-76D6-F2D1-DBC5-5E8ECA35858D.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/foreignkey/seg_0/59A581C5-CF8D-F481-B1FB-DFF5A5C449DD.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/foreignkey/seg_0/7A7AD433-88C4-93F7-EE60-959D08F6D13A.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/foreignkey/seg_0/A4E93A62-6031-F08B-E6C7-86DF604A7124.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/foreignkey/seg_0/A737B751-6AB9-96DF-AAE6-5FC5E0767B88.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/subviews/C27AF6FE-2226-742A-699F-6D70846CBCFA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/4071BE24-C623-01DB-72EA-AEE0A74AD1DF.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/605FE08A-796D-0319-5752-82E11C470BC8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/80CFA26C-1EA3-6C5C-958B-69E0CFA7F609.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/B8050FC4-6977-0182-669F-9AF1977736FB.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/C2D869B0-62D9-AD32-3457-7135B5E29448.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/C4D3317C-EAEB-C4BD-57F5-3E1FC7AAFF46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/CAF89466-6552-BFAF-52E5-E48D0C32A4BC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/modelche/rel/52AB9FBB-939FC1D532AE/table/seg_0/DACEBDED-C04B-8DF9-FE11-313DA5BA19B5.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="7ca30f2f-dcc8-436c-9c14-1d2edabdaacd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
