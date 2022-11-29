@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
-  ~ BUSINESS.GetSession, Relational Persistence for Idiomatic Java
+  ~ java.BUSINESS.GetSession, Relational Persistence for Idiomatic Java
   ~
   ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
   ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
   -->
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//BUSINESS.GetSession/BUSINESS.GetSession Configuration DTD 3.0//EN"
+        "-//java.BUSINESS.GetSession/java.BUSINESS.GetSession Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
@@ -14,7 +14,7 @@
     <session-factory>
 
         <property name="hibernate.id.new_generator_mappings">false</property>
-        <!-- BUSINESS.GetSession connection settings -->
+        <!-- java.BUSINESS.GetSession connection settings -->
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
         <property name="connection.username">WAREHOUSE</property>
@@ -40,14 +40,14 @@
         <!--<property name="hbm2ddl.import_files">/import.sql</property> -->
 
         <!-- Names the annotated entity class -->
-        <mapping class="ORM.Role"/>
-        <mapping class="ORM.User"/>
-        <mapping class="ORM.Partner"/>
-        <mapping class="ORM.Good"/>
-        <mapping class="ORM.Register"/>
-        <mapping class="ORM.Transaction"/>
-        <mapping class="ORM.Invoice"/>
-        <mapping class="ORM.Invoice_Good"/>
+        <mapping class="app.ORM.Role"/>
+        <mapping class="app.ORM.User"/>
+        <mapping class="app.ORM.Partner"/>
+        <mapping class="app.ORM.Good"/>
+        <mapping class="app.ORM.Register"/>
+        <mapping class="app.ORM.Transaction"/>
+        <mapping class="app.ORM.Invoice"/>
+        <mapping class="app.ORM.Invoice_Good"/>
 
     </session-factory>
 
