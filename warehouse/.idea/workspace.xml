@@ -40,23 +40,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Program Files/Java/junit-4.13.2.jar",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/junit-4.13.2.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\todor\Desktop\Warehouse\warehouse\src" />
@@ -69,23 +69,23 @@
       <recent name="test.BUSINESS.create" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GoodValidatorTest">
-    <configuration name="DateValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.InsertGoodTest">
+    <configuration name="InsertGoodTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="warehouse" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.BUSINESS.validators.*" />
+          <option name="PATTERN" value="test.BUSINESS.create.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.BUSINESS.validators" />
-      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.DateValidatorTest" />
+      <option name="PACKAGE_NAME" value="test.BUSINESS.create" />
+      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.create.InsertGoodTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmailTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PriceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="warehouse" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +94,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.BUSINESS.validators" />
-      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.EmailTest" />
+      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.PriceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GoodQuantityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuantityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="warehouse" />
       <extension name="coverage">
         <pattern>
@@ -109,13 +109,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.BUSINESS.validators" />
-      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.GoodQuantityTest" />
+      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.QuantityTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GoodQuantityTest.validQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsernameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="warehouse" />
       <extension name="coverage">
         <pattern>
@@ -124,35 +124,35 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.BUSINESS.validators" />
-      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.GoodQuantityTest" />
-      <option name="METHOD_NAME" value="validQuantity" />
+      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.UsernameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsernameTest.usernameExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="warehouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.BUSINESS.validators.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.BUSINESS.validators" />
+      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.UsernameTest" />
+      <option name="METHOD_NAME" value="usernameExists" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GoodValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="warehouse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.BUSINESS.validators.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.BUSINESS.validators" />
-      <option name="MAIN_CLASS_NAME" value="test.BUSINESS.validators.GoodValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GoodValidatorTest" />
-        <item itemvalue="JUnit.GoodQuantityTest" />
-        <item itemvalue="JUnit.GoodQuantityTest.validQuantity" />
-        <item itemvalue="JUnit.DateValidatorTest" />
-        <item itemvalue="JUnit.EmailTest" />
+        <item itemvalue="JUnit.InsertGoodTest" />
+        <item itemvalue="JUnit.UsernameTest" />
+        <item itemvalue="JUnit.UsernameTest.usernameExists" />
+        <item itemvalue="JUnit.QuantityTest" />
+        <item itemvalue="JUnit.PriceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -180,6 +180,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/BUSINESS/create/InsertGoodTest.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
