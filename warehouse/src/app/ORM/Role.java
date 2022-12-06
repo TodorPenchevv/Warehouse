@@ -1,4 +1,4 @@
-package app.ORM;
+package app.orm;
 
 import javax.persistence.*;
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.CurrentUser;
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.NotAdminException;
+import app.business.CurrentUser;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.NotAdminException;
 
 public class Admin implements Validator {
     int roleId = CurrentUser.getInstance().getRoleId();

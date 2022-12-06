@@ -1,5 +1,5 @@
 
-package app.LOGGING;
+package app.logging;
 
 public class InfoLogging extends Logging {
     public void log(String msg) {

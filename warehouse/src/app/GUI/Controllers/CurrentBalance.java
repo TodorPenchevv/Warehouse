@@ -1,10 +1,10 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.BUSINESS.GetSession;
-import app.GUI.AlertBox;
-import app.LOGGING.ErrorLogging;
-import app.LOGGING.ExceptionToString;
-import app.ORM.Register;
+import app.business.GetSession;
+import app.gui.AlertBox;
+import app.logging.ErrorLogging;
+import app.logging.ExceptionToString;
+import app.orm.Register;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

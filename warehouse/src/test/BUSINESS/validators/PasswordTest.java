@@ -1,8 +1,8 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.InvalidPassword;
-import app.BUSINESS.exceptions.PasswordsNotMatchException;
-import app.BUSINESS.validators.Password;
+import app.business.exceptions.InvalidPassword;
+import app.business.exceptions.PasswordsNotMatchException;
+import app.business.validators.Password;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

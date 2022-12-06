@@ -1,11 +1,11 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.NotEnoughMoneyException;
-import app.BUSINESS.exceptions.RegistryEmptyException;
-import app.BUSINESS.repository.RegisterRepository;
-import app.ORM.Good;
-import app.ORM.Register;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.NotEnoughMoneyException;
+import app.business.exceptions.RegistryEmptyException;
+import app.business.repository.RegisterRepository;
+import app.orm.Good;
+import app.orm.Register;
 
 import java.util.List;
 

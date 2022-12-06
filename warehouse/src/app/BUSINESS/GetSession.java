@@ -1,4 +1,4 @@
-package app.BUSINESS;
+package app.business;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,9 +1,9 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.repository.UserRepository;
-import app.BUSINESS.exceptions.UsernameTakenException;
-import app.ORM.User;
+import app.business.exceptions.CustomException;
+import app.business.repository.UserRepository;
+import app.business.exceptions.UsernameTakenException;
+import app.orm.User;
 
 import java.util.List;
 

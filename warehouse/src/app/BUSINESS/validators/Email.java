@@ -1,10 +1,10 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.PartnerMailExistsException;
-import app.BUSINESS.repository.PartnerRepository;
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.InvalidEmailException;
-import app.ORM.Partner;
+import app.business.exceptions.PartnerMailExistsException;
+import app.business.repository.PartnerRepository;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.InvalidEmailException;
+import app.orm.Partner;
 
 import java.util.List;
 import java.util.regex.Pattern;

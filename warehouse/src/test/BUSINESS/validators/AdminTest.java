@@ -1,8 +1,8 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.CurrentUser;
-import app.BUSINESS.exceptions.NotAdminException;
-import app.BUSINESS.validators.Admin;
+import app.business.CurrentUser;
+import app.business.exceptions.NotAdminException;
+import app.business.validators.Admin;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

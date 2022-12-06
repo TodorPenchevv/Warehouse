@@ -1,12 +1,12 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.GoodNotFoundException;
-import app.BUSINESS.repository.GoodRepository;
-import app.GUI.AlertBox;
-import app.LOGGING.ErrorLogging;
-import app.LOGGING.ExceptionToString;
-import app.ORM.Good;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.GoodNotFoundException;
+import app.business.repository.GoodRepository;
+import app.gui.AlertBox;
+import app.logging.ErrorLogging;
+import app.logging.ExceptionToString;
+import app.orm.Good;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

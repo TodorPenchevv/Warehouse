@@ -1,11 +1,9 @@
-package test.BUSINESS.create;
+package test.business.create;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.create.InsertUser;
-import app.BUSINESS.repository.GoodRepository;
-import app.BUSINESS.repository.UserRepository;
-import app.ORM.Good;
-import app.ORM.User;
+import app.business.GetSession;
+import app.business.create.InsertUser;
+import app.business.repository.UserRepository;
+import app.orm.User;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 

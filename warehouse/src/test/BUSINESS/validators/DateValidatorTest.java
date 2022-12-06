@@ -1,7 +1,7 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.InvalidDateException;
-import app.BUSINESS.validators.DateValidator;
+import app.business.exceptions.InvalidDateException;
+import app.business.validators.DateValidator;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

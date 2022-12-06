@@ -1,4 +1,4 @@
-package app.BUSINESS.create;
+package app.business.create;
 
 public class TempGood {
     private int id;

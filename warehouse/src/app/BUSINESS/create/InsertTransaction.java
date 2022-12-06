@@ -1,8 +1,8 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.BUSINESS.GetSession;
-import app.ORM.Transaction;
-import app.ORM.Transactions;
+import app.business.GetSession;
+import app.orm.Transaction;
+import app.orm.Transactions;
 import org.hibernate.Session;
 
 public class InsertTransaction {

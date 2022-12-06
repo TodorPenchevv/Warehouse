@@ -1,10 +1,10 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.validators.GoodValidator;
-import app.BUSINESS.validators.Price;
-import app.BUSINESS.validators.Quantity;
-import app.ORM.Good;
+import app.business.GetSession;
+import app.business.validators.GoodValidator;
+import app.business.validators.Price;
+import app.business.validators.Quantity;
+import app.orm.Good;
 import org.hibernate.Session;
 
 public class InsertGood {

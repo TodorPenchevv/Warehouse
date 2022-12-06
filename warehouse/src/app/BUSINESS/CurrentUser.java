@@ -1,4 +1,4 @@
-package app.BUSINESS;
+package app.business;
 
 public class CurrentUser {
     private static CurrentUser instance = new CurrentUser();

@@ -1,4 +1,4 @@
-package app.LOGGING;
+package app.logging;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

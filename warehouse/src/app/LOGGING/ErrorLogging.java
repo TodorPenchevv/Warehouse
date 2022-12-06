@@ -1,6 +1,6 @@
-package app.LOGGING;
+package app.logging;
 
-import app.GUI.AlertBox;
+import app.gui.AlertBox;
 
 public class ErrorLogging extends Logging {
     public void log(String msg) {

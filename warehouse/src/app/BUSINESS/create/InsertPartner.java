@@ -1,11 +1,11 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.validators.Email;
-import app.BUSINESS.validators.PartnerName;
-import app.BUSINESS.validators.PhoneNumber;
-import app.ORM.Partner;
+import app.business.GetSession;
+import app.business.exceptions.CustomException;
+import app.business.validators.Email;
+import app.business.validators.PartnerName;
+import app.business.validators.PhoneNumber;
+import app.orm.Partner;
 import org.hibernate.Session;
 
 public class InsertPartner {

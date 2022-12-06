@@ -1,8 +1,8 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.InvalidPassword;
-import app.BUSINESS.exceptions.PasswordsNotMatchException;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.InvalidPassword;
+import app.business.exceptions.PasswordsNotMatchException;
 
 public class Password implements Validator {
     private String password;

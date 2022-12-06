@@ -1,10 +1,10 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.validators.Password;
-import app.BUSINESS.validators.Username;
-import app.ORM.Role;
-import app.ORM.User;
+import app.business.GetSession;
+import app.business.validators.Password;
+import app.business.validators.Username;
+import app.orm.Role;
+import app.orm.User;
 import org.hibernate.Session;
 
 public class InsertUser {

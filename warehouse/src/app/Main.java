@@ -1,15 +1,12 @@
 package app;
 
-import app.BUSINESS.InitializeData;
-import app.GUI.SceneManager;
-import app.LOGGING.InfoLogging;
+import app.business.InitializeData;
+import app.gui.SceneManager;
+import app.logging.InfoLogging;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 public class Main extends Application{
-    private static final Marker mainMarker = MarkerManager.getMarker("java.Main");
 
     @Override
     public void start(Stage primaryStage) throws Exception {

@@ -1,10 +1,10 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.NegativeNumberException;
-import app.BUSINESS.exceptions.NotEnoughQuantityException;
-import app.BUSINESS.validators.GoodQuantity;
-import app.ORM.Good;
+import app.business.GetSession;
+import app.business.exceptions.NegativeNumberException;
+import app.business.exceptions.NotEnoughQuantityException;
+import app.business.validators.GoodQuantity;
+import app.orm.Good;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 

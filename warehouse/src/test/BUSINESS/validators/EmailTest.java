@@ -1,7 +1,7 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.InvalidEmailException;
-import app.BUSINESS.validators.Email;
+import app.business.exceptions.InvalidEmailException;
+import app.business.validators.Email;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,7 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.GUI.AlertBox;
-import app.ORM.*;
+import app.gui.AlertBox;
+import app.orm.*;
 import org.hibernate.Session;
 
 public class InsertInvoiceGood {

@@ -1,7 +1,7 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.InvalidPriceException;
-import app.BUSINESS.validators.Price;
+import app.business.exceptions.InvalidPriceException;
+import app.business.validators.Price;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

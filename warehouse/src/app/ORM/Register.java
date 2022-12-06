@@ -1,4 +1,4 @@
-package app.ORM;
+package app.orm;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

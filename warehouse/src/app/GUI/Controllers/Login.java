@@ -1,9 +1,9 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.BUSINESS.CurrentUser;
-import app.BUSINESS.repository.UserRepository;
-import app.GUI.SceneManager;
-import app.ORM.User;
+import app.business.CurrentUser;
+import app.business.repository.UserRepository;
+import app.gui.SceneManager;
+import app.orm.User;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;

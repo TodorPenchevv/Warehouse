@@ -1,7 +1,7 @@
-package app.BUSINESS.repository;
+package app.business.repository;
 
-import app.BUSINESS.GetSession;
-import app.ORM.Register;
+import app.business.GetSession;
+import app.orm.Register;
 import org.hibernate.Session;
 
 public class RegisterRepository {

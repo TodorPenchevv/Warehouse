@@ -1,4 +1,4 @@
-package app.BUSINESS.tools;
+package app.business.tools;
 
 import javafx.scene.control.TreeItem;
 

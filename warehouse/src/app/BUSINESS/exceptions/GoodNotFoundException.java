@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class GoodNotFoundException extends CustomException {
     public GoodNotFoundException(String goodName) {

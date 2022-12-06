@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class PartnerAlreadyExistsException extends CustomException {
     public PartnerAlreadyExistsException() {

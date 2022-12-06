@@ -1,9 +1,9 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.GoodAlreadyExistsException;
-import app.BUSINESS.repository.GoodRepository;
-import app.ORM.Good;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.GoodAlreadyExistsException;
+import app.business.repository.GoodRepository;
+import app.orm.Good;
 
 import java.util.List;
 

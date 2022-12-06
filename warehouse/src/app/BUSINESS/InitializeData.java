@@ -1,14 +1,14 @@
-package app.BUSINESS;
+package app.business;
 
-import app.BUSINESS.create.InsertRole;
-import app.BUSINESS.create.InsertTransaction;
-import app.BUSINESS.create.InsertUser;
-import app.BUSINESS.repository.UserRepository;
-import app.LOGGING.ErrorLogging;
-import app.LOGGING.ExceptionToString;
-import app.ORM.Roles;
-import app.ORM.Transactions;
-import app.ORM.User;
+import app.business.create.InsertRole;
+import app.business.create.InsertTransaction;
+import app.business.create.InsertUser;
+import app.business.repository.UserRepository;
+import app.logging.ErrorLogging;
+import app.logging.ExceptionToString;
+import app.orm.Roles;
+import app.orm.Transactions;
+import app.orm.User;
 import org.hibernate.Session;
 
 import java.util.List;

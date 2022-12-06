@@ -1,11 +1,11 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.RegistryAlreadyExists;
-import app.BUSINESS.repository.RegisterRepository;
-import app.BUSINESS.validators.Price;
-import app.ORM.Register;
+import app.business.GetSession;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.RegistryAlreadyExists;
+import app.business.repository.RegisterRepository;
+import app.business.validators.Price;
+import app.orm.Register;
 import org.hibernate.Session;
 
 public class InsertRegister {

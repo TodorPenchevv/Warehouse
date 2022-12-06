@@ -1,6 +1,6 @@
-package app.BUSINESS.tools;
+package app.business.tools;
 
-import app.ORM.Invoice_Good;
+import app.orm.Invoice_Good;
 
 import java.util.List;
 

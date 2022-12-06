@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class NotEnoughQuantityException extends CustomException {
     public NotEnoughQuantityException(String good, int quantity) {

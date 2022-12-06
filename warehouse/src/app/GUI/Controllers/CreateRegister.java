@@ -1,10 +1,10 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.BUSINESS.create.InsertRegister;
-import app.BUSINESS.exceptions.CustomException;
-import app.GUI.AlertBox;
-import app.LOGGING.ErrorLogging;
-import app.LOGGING.ExceptionToString;
+import app.business.create.InsertRegister;
+import app.business.exceptions.CustomException;
+import app.gui.AlertBox;
+import app.logging.ErrorLogging;
+import app.logging.ExceptionToString;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 

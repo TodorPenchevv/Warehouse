@@ -1,7 +1,7 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.NegativeNumberException;
-import app.BUSINESS.validators.Quantity;
+import app.business.exceptions.NegativeNumberException;
+import app.business.validators.Quantity;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

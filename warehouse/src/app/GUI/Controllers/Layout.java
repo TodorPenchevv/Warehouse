@@ -1,13 +1,13 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.BUSINESS.CurrentUser;
-import app.LOGGING.ErrorLogging;
-import app.BUSINESS.exceptions.NotAdminException;
-import app.BUSINESS.tools.Branch;
-import app.GUI.AlertBox;
-import app.GUI.SceneManager;
-import app.GUI.ViewManager;
-import app.LOGGING.ExceptionToString;
+import app.business.CurrentUser;
+import app.logging.ErrorLogging;
+import app.business.exceptions.NotAdminException;
+import app.business.tools.Branch;
+import app.gui.AlertBox;
+import app.gui.SceneManager;
+import app.gui.ViewManager;
+import app.logging.ExceptionToString;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

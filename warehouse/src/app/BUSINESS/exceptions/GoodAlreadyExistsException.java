@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class GoodAlreadyExistsException extends CustomException {
     public GoodAlreadyExistsException(String goodName) {

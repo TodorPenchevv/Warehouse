@@ -1,10 +1,10 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.NegativeNumberException;
-import app.BUSINESS.repository.GoodRepository;
-import app.BUSINESS.exceptions.NotEnoughQuantityException;
-import app.ORM.Good;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.NegativeNumberException;
+import app.business.repository.GoodRepository;
+import app.business.exceptions.NotEnoughQuantityException;
+import app.orm.Good;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package app.BUSINESS.repository;
+package app.business.repository;
 
-import app.BUSINESS.GetSession;
-import app.ORM.Partner;
+import app.business.GetSession;
+import app.orm.Partner;
 import org.hibernate.Session;
 
 import javax.persistence.criteria.CriteriaBuilder;

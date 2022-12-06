@@ -1,7 +1,7 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.NegativeNumberException;
-import app.BUSINESS.exceptions.CustomException;
+import app.business.exceptions.NegativeNumberException;
+import app.business.exceptions.CustomException;
 
 public class Quantity implements Validator {
     private int quantity;

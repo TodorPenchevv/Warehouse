@@ -1,9 +1,9 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.GoodAlreadyExistsException;
-import app.BUSINESS.validators.GoodValidator;
-import app.ORM.Good;
+import app.business.GetSession;
+import app.business.exceptions.GoodAlreadyExistsException;
+import app.business.validators.GoodValidator;
+import app.orm.Good;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,7 @@
-package app.BUSINESS.repository;
+package app.business.repository;
 
-import app.BUSINESS.GetSession;
-import app.ORM.Good;
+import app.business.GetSession;
+import app.orm.Good;
 
 import org.hibernate.Session;
 

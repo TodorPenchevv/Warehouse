@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class InvalidPriceException extends CustomException {
     public InvalidPriceException(int min, int max) {

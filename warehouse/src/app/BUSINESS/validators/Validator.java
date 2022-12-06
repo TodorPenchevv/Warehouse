@@ -1,6 +1,6 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
+import app.business.exceptions.CustomException;
 
 public interface Validator {
     void validate() throws CustomException;

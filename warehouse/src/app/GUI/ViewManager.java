@@ -1,8 +1,8 @@
-package app.GUI;
+package app.gui;
 
-import app.LOGGING.ErrorLogging;
-import app.BUSINESS.validators.Admin;
-import app.LOGGING.ExceptionToString;
+import app.logging.ErrorLogging;
+import app.business.validators.Admin;
+import app.logging.ExceptionToString;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;

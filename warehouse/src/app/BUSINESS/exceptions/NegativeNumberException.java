@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class NegativeNumberException extends CustomException {
     public NegativeNumberException(String item) {

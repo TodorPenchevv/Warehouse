@@ -1,7 +1,7 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.InvalidPhoneNumberException;
-import app.BUSINESS.validators.PhoneNumber;
+import app.business.exceptions.InvalidPhoneNumberException;
+import app.business.validators.PhoneNumber;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

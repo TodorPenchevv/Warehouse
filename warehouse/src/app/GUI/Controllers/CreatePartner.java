@@ -1,10 +1,10 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.LOGGING.ErrorLogging;
-import app.BUSINESS.create.InsertPartner;
-import app.BUSINESS.exceptions.CustomException;
-import app.GUI.AlertBox;
-import app.LOGGING.ExceptionToString;
+import app.logging.ErrorLogging;
+import app.business.create.InsertPartner;
+import app.business.exceptions.CustomException;
+import app.gui.AlertBox;
+import app.logging.ExceptionToString;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 

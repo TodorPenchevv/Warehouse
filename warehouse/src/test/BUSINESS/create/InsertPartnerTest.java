@@ -1,9 +1,9 @@
-package test.BUSINESS.create;
+package test.business.create;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.create.InsertPartner;
-import app.BUSINESS.repository.PartnerRepository;
-import app.ORM.Partner;
+import app.business.GetSession;
+import app.business.create.InsertPartner;
+import app.business.repository.PartnerRepository;
+import app.orm.Partner;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 

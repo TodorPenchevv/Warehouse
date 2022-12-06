@@ -1,7 +1,7 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.exceptions.DatesNotConsecutive;
-import app.BUSINESS.validators.DatesConsecutive;
+import app.business.exceptions.DatesNotConsecutive;
+import app.business.validators.DatesConsecutive;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

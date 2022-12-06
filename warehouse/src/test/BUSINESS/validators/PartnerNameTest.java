@@ -1,9 +1,9 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.PartnerAlreadyExistsException;
-import app.BUSINESS.validators.PartnerName;
-import app.ORM.Partner;
+import app.business.GetSession;
+import app.business.exceptions.PartnerAlreadyExistsException;
+import app.business.validators.PartnerName;
+import app.orm.Partner;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 

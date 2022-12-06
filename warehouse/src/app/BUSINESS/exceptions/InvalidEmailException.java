@@ -1,4 +1,4 @@
-package app.BUSINESS.exceptions;
+package app.business.exceptions;
 
 public class InvalidEmailException extends CustomException {
     public InvalidEmailException() {

@@ -1,7 +1,7 @@
-package app.GUI;
+package app.gui;
 
-import app.LOGGING.ErrorLogging;
-import app.LOGGING.ExceptionToString;
+import app.logging.ErrorLogging;
+import app.logging.ExceptionToString;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;

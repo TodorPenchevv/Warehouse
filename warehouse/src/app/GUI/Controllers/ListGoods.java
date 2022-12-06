@@ -1,9 +1,9 @@
-package app.GUI.Controllers;
+package app.gui.Controllers;
 
-import app.BUSINESS.repository.GoodRepository;
-import app.LOGGING.ErrorLogging;
-import app.LOGGING.ExceptionToString;
-import app.ORM.Good;
+import app.business.repository.GoodRepository;
+import app.logging.ErrorLogging;
+import app.logging.ExceptionToString;
+import app.orm.Good;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

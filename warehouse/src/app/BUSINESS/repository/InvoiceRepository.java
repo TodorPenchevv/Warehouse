@@ -1,10 +1,10 @@
-package app.BUSINESS.repository;
+package app.business.repository;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.validators.DatesConsecutive;
-import app.BUSINESS.validators.DateValidator;
-import app.ORM.Invoice;
+import app.business.GetSession;
+import app.business.exceptions.CustomException;
+import app.business.validators.DatesConsecutive;
+import app.business.validators.DateValidator;
+import app.orm.Invoice;
 import org.hibernate.Session;
 
 import javax.persistence.criteria.*;

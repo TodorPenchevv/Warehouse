@@ -40,14 +40,14 @@
         <!--<property name="hbm2ddl.import_files">/import.sql</property> -->
 
         <!-- Names the annotated entity class -->
-        <mapping class="app.ORM.Role"/>
-        <mapping class="app.ORM.User"/>
-        <mapping class="app.ORM.Partner"/>
-        <mapping class="app.ORM.Good"/>
-        <mapping class="app.ORM.Register"/>
-        <mapping class="app.ORM.Transaction"/>
-        <mapping class="app.ORM.Invoice"/>
-        <mapping class="app.ORM.Invoice_Good"/>
+        <mapping class="app.orm.Role"/>
+        <mapping class="app.orm.User"/>
+        <mapping class="app.orm.Partner"/>
+        <mapping class="app.orm.Good"/>
+        <mapping class="app.orm.Register"/>
+        <mapping class="app.orm.Transaction"/>
+        <mapping class="app.orm.Invoice"/>
+        <mapping class="app.orm.Invoice_Good"/>
 
     </session-factory>
 

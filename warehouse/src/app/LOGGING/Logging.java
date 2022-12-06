@@ -1,4 +1,4 @@
-package app.LOGGING;
+package app.logging;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

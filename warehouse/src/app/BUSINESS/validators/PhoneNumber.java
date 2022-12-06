@@ -1,7 +1,7 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.InvalidPhoneNumberException;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.InvalidPhoneNumberException;
 
 import java.util.regex.Pattern;
 

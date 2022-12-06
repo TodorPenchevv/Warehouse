@@ -1,12 +1,9 @@
-package test.BUSINESS.validators;
+package test.business.validators;
 
-import app.BUSINESS.GetSession;
-import app.BUSINESS.exceptions.PartnerAlreadyExistsException;
-import app.BUSINESS.exceptions.UsernameTakenException;
-import app.BUSINESS.validators.PartnerName;
-import app.BUSINESS.validators.Username;
-import app.ORM.Partner;
-import app.ORM.User;
+import app.business.GetSession;
+import app.business.exceptions.UsernameTakenException;
+import app.business.validators.Username;
+import app.orm.User;
 import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 

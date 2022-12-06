@@ -1,7 +1,7 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.InvalidPriceException;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.InvalidPriceException;
 
 public class Price implements Validator {
     private double price;

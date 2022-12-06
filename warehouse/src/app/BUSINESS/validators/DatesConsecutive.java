@@ -1,7 +1,7 @@
-package app.BUSINESS.validators;
+package app.business.validators;
 
-import app.BUSINESS.exceptions.CustomException;
-import app.BUSINESS.exceptions.DatesNotConsecutive;
+import app.business.exceptions.CustomException;
+import app.business.exceptions.DatesNotConsecutive;
 
 import java.time.LocalDate;
 

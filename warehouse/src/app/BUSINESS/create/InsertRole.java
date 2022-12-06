@@ -1,8 +1,8 @@
-package app.BUSINESS.create;
+package app.business.create;
 
-import app.BUSINESS.GetSession;
-import app.ORM.Role;
-import app.ORM.Roles;
+import app.business.GetSession;
+import app.orm.Role;
+import app.orm.Roles;
 import org.hibernate.Session;
 
 public class InsertRole {
