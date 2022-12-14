@@ -71,7 +71,7 @@ public class InsertInvoice {
               transactionId = 2;
 
         Transaction transaction = session.get(Transaction.class, transactionId);
-        user.getInvoices().add(newInvoice);
+        transaction.getInvoices().add(newInvoice);
         newInvoice.setTransaction(transaction);
 
         session.save(newInvoice);
